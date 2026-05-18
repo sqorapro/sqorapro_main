@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQORA PRO Live Demo</title>
+  <meta name="description" content="SQORA PRO live demo details and preview.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="demo-page.css">
+</head>
+<body style="font-family: Inter">
+  <nav class="site-nav" aria-label="Primary navigation" style="color: rgb(255, 76, 76); font-family: Consolas; height: 62px; background-color: rgb(243, 243, 243); width: 1180px; padding: 10px 12px 10px 18px; opacity: 1; text-align: center">
+    <a class="wordmark" href="../index.html#hero" aria-label="SQORA PRO home">
+      <img src="../sqora-logo.png" alt="SQORA PRO" style="object-fit: fill; opacity: 1; height: 40px">
+    </a>
+    <div class="nav-links" aria-label="Sections">
+      <a href="../index.html#services" data-i18n="nav.services">Услуги</a>
+      <a href="../index.html#work" data-i18n="nav.work">Работы</a>
+      <a href="../demos.html" data-i18n="nav.demos">Демо</a>
+      <a href="../index.html#process" data-i18n="nav.process">Процесс</a>
+      <a href="../index.html#about" data-i18n="nav.about">О нас</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Контакты</a>
+    </div>
+    <div class="nav-actions">
+      <div class="language-toggle" aria-label="Language selector">
+        <button type="button" data-lang="ru" class="active">RU</button>
+        <span>|</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="nav-cta" href="../index.html#contact" data-i18n="nav.cta">Обсудить проект <span aria-hidden="true">→</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="../index.html#services" data-i18n="nav.services">Услуги</a>
+      <a href="../index.html#work" data-i18n="nav.work">Работы</a>
+      <a href="../demos.html" data-i18n="nav.demos">Демо</a>
+      <a href="../index.html#process" data-i18n="nav.process">Процесс</a>
+      <a href="../index.html#about" data-i18n="nav.about">О нас</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Контакты</a>
+      <div class="mobile-menu-meta">
+        <div class="language-toggle">
+          <button type="button" data-lang="ru" class="active">RU</button>
+          <span>|</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a class="nav-cta" href="../index.html#contact" data-i18n="nav.cta">Обсудить проект <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="demo-page">
+    <div class="demo-breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>→</span>
+      <a href="../demos.html">Live Demos</a>
+      <span>→</span>
+      <span id="demo-name-crumb"></span>
+    </div>
+    <div class="demo-page-grid">
+      <div class="demo-page-left">
+        <div class="demo-page-tags" id="demo-tags"></div>
+        <h1 class="demo-page-headline" id="demo-headline"></h1>
+        <p class="demo-page-desc" id="demo-desc"></p>
+        <div class="demo-section">
+          <div class="demo-section-title">Кому подойдёт / For whom</div>
+          <ul class="for-whom-list" id="for-whom-list"></ul>
+        </div>
+        <div class="demo-section">
+          <div class="demo-section-title">Что внутри / Features</div>
+          <ul class="features-list" id="features-list"></ul>
+        </div>
+        <div class="demo-meta">
+          <div class="demo-meta-item">
+            <span class="demo-meta-icon">💰</span>
+            <span class="demo-meta-label">Бюджет / Budget</span>
+            <span class="demo-meta-value" id="demo-budget"></span>
+          </div>
+          <div class="demo-meta-item">
+            <span class="demo-meta-icon">⏱</span>
+            <span class="demo-meta-label">Срок / Timeline</span>
+            <span class="demo-meta-value" id="demo-timeline"></span>
+          </div>
+          <div class="demo-meta-item">
+            <span class="demo-meta-icon">🛠</span>
+            <span class="demo-meta-label">Стек / Stack</span>
+            <div class="demo-meta-tags" id="demo-stack"></div>
+          </div>
+        </div>
+        <div class="demo-page-ctas">
+          <div id="live-btn-wrap"></div>
+          <a href="../index.html#contact" class="btn-order">
+            Заказать похожий / Order similar →
+          </a>
+        </div>
+        <div class="demo-share">
+          <span>Поделиться:</span>
+          <button class="copy-link-btn" onclick="copyDemoLink()">
+            📋 Скопировать ссылку
+          </button>
+        </div>
+      </div>
+      <div class="demo-preview-wrap">
+        <div class="demo-preview-frame" id="preview-frame"></div>
+        <a href="#" id="open-full-link" class="demo-open-full" target="_blank" rel="noopener noreferrer">
+          Открыть на полный экран ↗
+        </a>
+      </div>
+    </div>
+    <section class="demo-related">
+      <h2 class="demo-related-title">Похожие демо / Related</h2>
+      <div class="demo-related-grid" id="related-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="wordmark footer-mark" href="../index.html#hero" aria-label="SQORA PRO home">
+          <img src="../sqora-logo.png" alt="SQORA PRO">
+        </a>
+        <p>Think. Build. Ship.</p>
+        <p class="footer-tag" data-i18n="footer.kind">Digital Product Studio · Алматы, Казахстан</p>
+      </div>
+      <div class="footer-links">
+        <strong data-i18n="footer.nav_title">Навигация</strong>
+        <a href="../index.html#services" data-i18n="nav.services">Услуги</a>
+        <a href="../index.html#work" data-i18n="nav.work">Работы</a>
+        <a href="../demos.html" data-i18n="nav.demos">Демо</a>
+        <a href="../index.html#process" data-i18n="nav.process">Процесс</a>
+        <a href="../index.html#about" data-i18n="nav.about">О нас</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Контакты</a>
+      </div>
+      <div class="footer-contact">
+        <strong data-i18n="footer.contact_title">Контакты</strong>
+        <a href="mailto:info@sqorapro.com">info@sqorapro.com</a>
+        <a href="tel:+77772894949">+7 777 289 49 49</a>
+        <span data-i18n="contact.address">Алматы, ул. Чайковского 131</span>
+      </div>
+    </div>
+    <div class="container legal-row">
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.l_privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer.l_data">Data Processing</a>
+        <a href="#" data-i18n="footer.l_cookie">Cookie Policy</a>
+        <a href="#" data-i18n="footer.l_terms">Terms of Use</a>
+        <a href="#" data-i18n="footer.l_offer">Public Offer</a>
+        <span class="legal-note" data-i18n="footer.legal_note">Юридические документы сгенерированы Leqalo.com</span>
+      </div>
+      <div class="legal-right">
+        <span data-i18n="footer.copy">© 2026 SQORA PRO. Все права защищены.</span>
+        <span class="built-by" data-i18n="footer.built">Сделано с ♥ командой SQORA PRO</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../i18n.js"></script>
+  <script src="../script.js"></script>
+  <script src="demos-data.js"></script>
+  <script>
+const PAGE_ID = 'auto-service';
+const lang = localStorage.getItem('sqora_lang') || 'ru';
+const demo = DEMOS.find(d => d.id === PAGE_ID);
+if (!demo) { window.location.href = '../demos.html'; }
+
+document.title = demo.name[lang] + ' — SQORA PRO Live Demo';
+document.getElementById('demo-name-crumb').textContent = demo.name[lang];
+document.getElementById('demo-headline').textContent = demo.headline[lang];
+document.getElementById('demo-desc').textContent = demo.description[lang];
+document.getElementById('demo-budget').textContent = demo.budget;
+document.getElementById('demo-timeline').textContent = demo.timeline;
+
+// Tags
+const tagsEl = document.getElementById('demo-tags');
+tagsEl.innerHTML = `
+  <span class="demo-tag demo-tag-accent">${demo.industry_label[lang]}</span>
+  <span class="demo-tag ${demo.status === 'live' ? 'badge-live' : 'badge-soon'}">
+    ${demo.status === 'live' ? '● Live' : (lang === 'ru' ? 'Скоро' : 'Coming Soon')}
+  </span>`;
+
+// Stack
+const stackEl = document.getElementById('demo-stack');
+demo.stack.forEach(s => {
+  const span = document.createElement('span');
+  span.textContent = s;
+  stackEl.appendChild(span);
+});
+
+// For whom
+const forWhomEl = document.getElementById('for-whom-list');
+demo.forWhom[lang].forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = item;
+  forWhomEl.appendChild(li);
+});
+
+// Features
+const featEl = document.getElementById('features-list');
+demo.features[lang].forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = item;
+  featEl.appendChild(li);
+});
+
+// Live button
+const liveBtnWrap = document.getElementById('live-btn-wrap');
+if (demo.status === 'live' && demo.liveUrl) {
+  liveBtnWrap.innerHTML = `<a href="${demo.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-live">Открыть Live Demo / Open →</a>`;
+  const openFullLink = document.getElementById('open-full-link');
+  openFullLink.href = demo.liveUrl;
+  openFullLink.rel = 'noopener noreferrer';
+} else {
+  liveBtnWrap.innerHTML = `<div class="btn-disabled-demo">Demo Coming Soon</div>`;
+  document.getElementById('open-full-link').style.display = 'none';
+}
+
+const openWebsite = (event) => {
+  const url = event.currentTarget.getAttribute('href') || demo.liveUrl;
+  if (!url || url === '#') return;
+  event.preventDefault();
+  const opened = window.open(url, '_blank');
+  if (opened) opened.opener = null;
+  else window.location.href = url;
+};
+
+const liveButton = liveBtnWrap.querySelector('.btn-live');
+if (liveButton) liveButton.addEventListener('click', openWebsite);
+const fullLink = document.getElementById('open-full-link');
+if (fullLink && demo.status === 'live' && demo.liveUrl) fullLink.addEventListener('click', openWebsite);
+
+// Preview
+const previewEl = document.getElementById('preview-frame');
+if (demo.status === 'live' && demo.liveUrl) {
+  previewEl.innerHTML = `<iframe src="${demo.liveUrl}" class="demo-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>`;
+} else {
+  previewEl.innerHTML = `
+    <div class="demo-soon-placeholder">
+      <div class="demo-soon-emoji">${demo.emoji}</div>
+      <div class="demo-soon-title">Demo in Production</div>
+      <div class="demo-soon-sub">${lang === 'ru' ? 'Скоро запустим' : 'Launching soon'}</div>
+    </div>`;
+}
+
+// Related (same industry or type, exclude current, max 3)
+const related = DEMOS
+  .filter(d => d.id !== PAGE_ID && (d.industry === demo.industry || d.type === demo.type))
+  .slice(0, 3);
+const relatedEl = document.getElementById('related-grid');
+related.forEach(r => {
+  const a = document.createElement('a');
+  a.href = r.id + '.html';
+  a.className = 'demo-card';
+  a.style.textDecoration = 'none';
+  a.style.display = 'block';
+  a.innerHTML = `
+    <div style="height:160px;background:linear-gradient(135deg,#EEF5FF,#E0EEFF);display:flex;align-items:center;justify-content:center;font-size:48px;border-radius:16px 16px 0 0;position:relative;">
+      ${r.emoji}
+      <span style="position:absolute;top:10px;left:10px;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;background:${r.status==='live'?'rgba(46,204,113,0.15)':'rgba(0,120,255,0.1)'};color:${r.status==='live'?'#1a7a4a':'#0078FF'}">
+        ${r.status==='live'?'● Live':(lang==='ru'?'Скоро':'Soon')}
+      </span>
+    </div>
+    <div style="padding:16px;border:1px solid rgba(10,22,40,0.08);border-top:none;border-radius:0 0 16px 16px;">
+      <div style="font-weight:700;font-size:16px;margin-bottom:4px">${r.name[lang]}</div>
+      <div style="font-size:13px;color:#5A6A82;margin-bottom:8px">${r.industry_label[lang]}</div>
+      <div style="font-size:13px;color:#0078FF;font-weight:600">${lang==='ru'?'от':'from'} ${r.budget} →</div>
+    </div>`;
+  relatedEl.appendChild(a);
+});
+
+function copyDemoLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = document.querySelector('.copy-link-btn');
+    const orig = btn.textContent;
+    btn.textContent = '✓ ' + (lang === 'ru' ? 'Скопировано' : 'Copied');
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
+}
+  </script>
+</body>
+</html>

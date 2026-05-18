@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Demos — SQORA PRO</title>
+  <meta name="description" content="Live demos catalog — explore real, deployed products by SQORA PRO. Order a similar one for your business.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="i18n.js"></script>
+  <script defer src="demos/demos-data.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="demos-page.js"></script>
+  <style>
+    /* ─── demos-only styles, riding on the same tokens as styles.css ─── */
+    .demos-hero {
+      min-height: 0;
+      padding: 120px 0 64px;
+    }
+    .demos-hero .hero-title {
+      font-size: 72px;
+      margin-bottom: 18px;
+    }
+    .demos-hero .hero-subtitle {
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .demos-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+      align-items: start;
+    }
+    .demos-filter-toggle {
+      display: none;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 16px;
+      color: var(--ink);
+      background: #ffffff;
+      border: 1px solid rgba(10, 22, 40, 0.10);
+      border-radius: 14px;
+      font: 600 14px/1 Inter, Arial, sans-serif;
+      cursor: pointer;
+    }
+    .demos-sidebar {
+      position: sticky;
+      top: 100px;
+      background: white;
+      border: 1px solid rgba(10, 22, 40, 0.08);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    .filter-row {
+      margin-bottom: 0;
+    }
+    .filter-row-label {
+      display: block;
+      margin: 20px 0 10px;
+      color: #5A6A82;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .filter-row:first-child .filter-row-label {
+      margin-top: 0;
+    }
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      color: #5A6A82;
+      background: white;
+      border: 1px solid rgba(10, 22, 40, 0.10);
+      border-radius: 999px;
+      font: 600 13px/1 Inter, Arial, sans-serif;
+      cursor: pointer;
+      transition: all 180ms ease;
+    }
+    .filter-btn:hover {
+      border-color: #0078FF;
+      color: #0078FF;
+    }
+    .filter-btn.active {
+      color: white;
+      background: #0078FF;
+      border-color: #0078FF;
+    }
+    .filter-reset {
+      display: block;
+      margin-top: 20px;
+      padding: 0;
+      color: #0078FF;
+      background: none;
+      border: none;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    /* Cards grid */
+    .demos-grid-section {
+      min-width: 0;
+    }
+    .demos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .demo-empty {
+      grid-column: 1 / -1;
+      padding: 64px 24px;
+      text-align: center;
+      color: var(--muted);
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+    }
+
+    .demo-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff;
+      transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, opacity 240ms ease;
+    }
+    .demo-card.is-soon { opacity: 0.78; }
+    .demo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(10, 22, 40, 0.12);
+      border-color: rgba(0, 120, 255, 0.22);
+      opacity: 1;
+    }
+    .demo-card:hover .demo-arrow { transform: translateX(4px); }
+
+    .demo-thumb {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 220px;
+      font-size: 72px;
+      line-height: 1;
+    }
+    .demo-thumb.is-live {
+      background: linear-gradient(135deg, #EEF5FF 0%, #E0EEFF 100%);
+    }
+    .demo-thumb.is-soon {
+      background: linear-gradient(135deg, #F7F9FC 0%, #EEF2F8 100%);
+    }
+    .demo-badges {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .demo-badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      background: rgba(10, 22, 40, 0.55);
+      color: #ffffff;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .demo-badge.badge-live {
+      background: rgba(46, 204, 113, 0.18);
+      color: #1a7a4a;
+      border: 1px solid rgba(46, 204, 113, 0.35);
+    }
+    .demo-badge.badge-soon {
+      background: rgba(0, 120, 255, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(0, 120, 255, 0.22);
+    }
+    .demo-badge.badge-type {
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--ink);
+      border: 1px solid rgba(10, 22, 40, 0.08);
+    }
+    .demo-badge .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 4px;
+      border-radius: 50%;
+      background: currentColor;
+      vertical-align: 1px;
+    }
+
+    .demo-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 20px 22px 22px;
+      flex: 1;
+    }
+    .demo-name {
+      margin: 0;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+    .demo-industry {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .demo-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .demo-tags span {
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: #eef4fb;
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .demo-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .demo-arrow {
+      transition: transform 200ms ease;
+    }
+
+    @media (max-width: 1000px) {
+      .demos-layout {
+        grid-template-columns: 220px 1fr;
+        gap: 24px;
+      }
+      .demos-hero .hero-title { font-size: 56px; }
+    }
+    @media (max-width: 768px) {
+      .demos-layout {
+        grid-template-columns: 1fr;
+        padding: 24px 16px 60px;
+      }
+      .demos-filter-toggle {
+        display: flex;
+      }
+      .demos-sidebar {
+        position: static;
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .demos-sidebar-content {
+        max-height: 1200px;
+        overflow: hidden;
+        transition: max-height 260ms ease;
+      }
+      .demos-sidebar.is-collapsed .demos-sidebar-content {
+        max-height: 0;
+      }
+      .demos-grid { grid-template-columns: 1fr; }
+      .demos-hero { padding: 100px 0 40px; }
+      .demos-hero .hero-title { font-size: 44px; }
+    }
+  </style>
+</head>
+<body style="font-family: Inter">
+  <nav class="site-nav" aria-label="Primary navigation" style="font-family: Consolas; height: 62px; background-color: rgb(243, 243, 243); padding: 10px 12px 10px 18px">
+    <a class="wordmark" href="index.html" aria-label="SQORA PRO home">
+      <img src="sqora-logo.png" alt="SQORA PRO" style="object-fit: fill; height: 40px">
+    </a>
+    <div class="nav-links" aria-label="Sections">
+      <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+      <a href="index.html#work" data-i18n="nav.work">Работы</a>
+      <a href="demos.html" data-i18n="nav.demos" class="active">Демо</a>
+      <a href="index.html#process" data-i18n="nav.process">Процесс</a>
+      <a href="index.html#about" data-i18n="nav.about">О нас</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Контакты</a>
+    </div>
+    <div class="nav-actions">
+      <div class="language-toggle" aria-label="Language selector">
+        <button type="button" data-lang="ru" class="active">RU</button>
+        <span>|</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="nav-cta" href="index.html#contact" data-i18n="nav.cta">Обсудить проект <span aria-hidden="true">→</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+      <a href="index.html#work" data-i18n="nav.work">Работы</a>
+      <a href="demos.html" data-i18n="nav.demos">Демо</a>
+      <a href="index.html#process" data-i18n="nav.process">Процесс</a>
+      <a href="index.html#about" data-i18n="nav.about">О нас</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Контакты</a>
+      <div class="mobile-menu-meta">
+        <div class="language-toggle">
+          <button type="button" data-lang="ru" class="active">RU</button>
+          <span>|</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a class="nav-cta" href="index.html#contact" data-i18n="nav.cta">Обсудить проект <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero demos-hero" id="hero">
+      <div class="container">
+        <div class="eyebrow dark"><span data-i18n="demos.eyebrow">LIVE DEMOS</span></div>
+        <h1 class="hero-title">
+          <span data-i18n="demos.headline">Живые примеры. Закажите похожее.</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="demos.sub">Каждое демо — реально задеплоенный продукт. Изучите пример и закажите похожий для своего бизнеса.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="index.html#contact" data-i18n="hero.cta_primary">Начать проект <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="demos-layout">
+      <button class="demos-filter-toggle" id="filters-toggle" type="button" aria-expanded="false" aria-controls="demos-sidebar-content">
+        Фильтры ▼
+      </button>
+      <aside class="demos-sidebar is-collapsed" aria-label="Demo filters">
+        <div class="demos-sidebar-content" id="demos-sidebar-content">
+          <div class="filter-row" data-row="type">
+            <span class="filter-row-label" data-i18n="demos.f_type">Тип</span>
+            <div class="filter-pills" id="filter-type"></div>
+          </div>
+          <div class="filter-row filter-row-sub" data-row="sub" style="display: none">
+            <span class="filter-row-label" data-i18n="demos.f_sub">Вид</span>
+            <div class="filter-pills" id="filter-sub"></div>
+          </div>
+          <div class="filter-row" data-row="industry">
+            <span class="filter-row-label" data-i18n="demos.f_industry">Отрасль</span>
+            <div class="filter-pills" id="filter-industry"></div>
+          </div>
+          <div class="filter-row" data-row="budget">
+            <span class="filter-row-label" data-i18n="demos.f_budget">Бюджет</span>
+            <div class="filter-pills" id="filter-budget"></div>
+          </div>
+          <button class="filter-reset" id="reset-filters" type="button" data-i18n="demos.reset">Сбросить фильтры</button>
+        </div>
+      </aside>
+      <section class="demos-grid-section">
+        <div class="demos-grid" id="demos-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="wordmark footer-mark" href="index.html" aria-label="SQORA PRO home">
+          <img src="sqora-logo.png" alt="SQORA PRO">
+        </a>
+        <p>Think. Build. Ship.</p>
+        <p class="footer-tag" data-i18n="footer.kind">Digital Product Studio · Алматы, Казахстан</p>
+      </div>
+      <div class="footer-links">
+        <strong data-i18n="footer.nav_title">Навигация</strong>
+        <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+        <a href="index.html#work" data-i18n="nav.work">Работы</a>
+        <a href="demos.html" data-i18n="nav.demos">Демо</a>
+        <a href="index.html#process" data-i18n="nav.process">Процесс</a>
+        <a href="index.html#about" data-i18n="nav.about">О нас</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Контакты</a>
+      </div>
+      <div class="footer-contact">
+        <strong data-i18n="footer.contact_title">Контакты</strong>
+        <a href="mailto:info@sqorapro.com">info@sqorapro.com</a>
+        <a href="tel:+77772894949">+7 777 289 49 49</a>
+        <span data-i18n="contact.address">Алматы, ул. Чайковского 131</span>
+      </div>
+    </div>
+    <div class="container legal-row">
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.l_privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer.l_data">Data Processing</a>
+        <a href="#" data-i18n="footer.l_cookie">Cookie Policy</a>
+        <a href="#" data-i18n="footer.l_terms">Terms of Use</a>
+        <a href="#" data-i18n="footer.l_offer">Public Offer</a>
+        <span class="legal-note" data-i18n="footer.legal_note">Юридические документы сгенерированы Leqalo.com</span>
+      </div>
+      <div class="legal-right">
+        <span data-i18n="footer.copy">© 2026 SQORA PRO. Все права защищены.</span>
+        <span class="built-by" data-i18n="footer.built">Сделано с ♥ командой SQORA PRO</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

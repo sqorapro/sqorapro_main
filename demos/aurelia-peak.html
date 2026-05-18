@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURELI — Ресторан высокой кухни с видом на горы, Алматы · SQORA PRO Demo</title>
+  <meta name="description" content="Демо: премиальный лендинг ресторана AURELI в Алматы. Фуллскрин херо, засечковая типографика, онлайн-бронирование, галерея, мероприятия.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="demo-page.css">
+</head>
+<body style="font-family: Inter">
+  <nav class="site-nav" aria-label="Primary navigation" style="color: rgb(255, 76, 76); font-family: Consolas; height: 62px; background-color: rgb(243, 243, 243); width: 1180px; padding: 10px 12px 10px 18px; opacity: 1; text-align: center">
+    <a class="wordmark" href="../index.html#hero" aria-label="SQORA PRO home">
+      <img src="../sqora-logo.png" alt="SQORA PRO" style="object-fit: fill; opacity: 1; height: 40px">
+    </a>
+    <div class="nav-links" aria-label="Sections">
+      <a href="../index.html#services" data-i18n="nav.services">Услуги</a>
+      <a href="../index.html#work" data-i18n="nav.work">Работы</a>
+      <a href="../demos.html" data-i18n="nav.demos">Демо</a>
+      <a href="../index.html#process" data-i18n="nav.process">Процесс</a>
+      <a href="../index.html#about" data-i18n="nav.about">О нас</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Контакты</a>
+    </div>
+    <div class="nav-actions">
+      <div class="language-toggle" aria-label="Language selector">
+        <button type="button" data-lang="ru" class="active">RU</button>
+        <span>|</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="nav-cta" href="../index.html#contact" data-i18n="nav.cta">Обсудить проект <span aria-hidden="true">→</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="../index.html#services" data-i18n="nav.services">Услуги</a>
+      <a href="../index.html#work" data-i18n="nav.work">Работы</a>
+      <a href="../demos.html" data-i18n="nav.demos">Демо</a>
+      <a href="../index.html#process" data-i18n="nav.process">Процесс</a>
+      <a href="../index.html#about" data-i18n="nav.about">О нас</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Контакты</a>
+      <div class="mobile-menu-meta">
+        <div class="language-toggle">
+          <button type="button" data-lang="ru" class="active">RU</button>
+          <span>|</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a class="nav-cta" href="../index.html#contact" data-i18n="nav.cta">Обсудить проект <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="demo-page">
+    <div class="demo-breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>→</span>
+      <a href="../demos.html">Live Demos</a>
+      <span>→</span>
+      <span id="demo-name-crumb"></span>
+    </div>
+    <div class="demo-page-grid">
+      <div class="demo-page-left">
+        <div class="demo-page-tags" id="demo-tags"></div>
+        <h1 class="demo-page-headline" id="demo-headline"></h1>
+        <p class="demo-page-desc" id="demo-desc"></p>
+        <div class="demo-section">
+          <div class="demo-section-title" id="section-for-whom-title">Кому подойдёт</div>
+          <ul class="for-whom-list" id="for-whom-list"></ul>
+        </div>
+        <div class="demo-section">
+          <div class="demo-section-title" id="section-features-title">Что внутри</div>
+          <ul class="features-list" id="features-list"></ul>
+        </div>
+        <div class="demo-meta">
+          <div class="demo-meta-item">
+            <span class="demo-meta-icon">💰</span>
+            <span class="demo-meta-label" id="meta-label-budget">Бюджет</span>
+            <span class="demo-meta-value" id="demo-budget"></span>
+          </div>
+          <div class="demo-meta-item">
+            <span class="demo-meta-icon">⏱</span>
+            <span class="demo-meta-label" id="meta-label-timeline">Срок</span>
+            <span class="demo-meta-value" id="demo-timeline"></span>
+          </div>
+          <div class="demo-meta-item">
+            <span class="demo-meta-icon">🛠</span>
+            <span class="demo-meta-label" id="meta-label-stack">Стек</span>
+            <div class="demo-meta-tags" id="demo-stack"></div>
+          </div>
+        </div>
+        <div class="demo-page-ctas">
+          <div id="live-btn-wrap"></div>
+          <a href="../index.html#contact" class="btn-order" id="btn-order">Заказать похожий →</a>
+        </div>
+        <div class="demo-share">
+          <span id="share-label">Поделиться:</span>
+          <button class="copy-link-btn" onclick="copyDemoLink()">📋 Скопировать ссылку</button>
+        </div>
+      </div>
+      <div class="demo-preview-wrap">
+        <div class="demo-preview-frame" id="preview-frame"></div>
+        <a href="#" id="open-full-link" class="demo-open-full" target="_blank" rel="noopener noreferrer">Открыть на полный экран ↗</a>
+      </div>
+    </div>
+    <section class="demo-related">
+      <h2 class="demo-related-title" id="related-title">Похожие демо</h2>
+      <div class="demo-related-grid" id="related-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="wordmark footer-mark" href="../index.html#hero" aria-label="SQORA PRO home">
+          <img src="../sqora-logo.png" alt="SQORA PRO">
+        </a>
+        <p>Think. Build. Ship.</p>
+        <p class="footer-tag" data-i18n="footer.kind">Digital Product Studio · Алматы, Казахстан</p>
+      </div>
+      <div class="footer-links">
+        <strong data-i18n="footer.nav_title">Навигация</strong>
+        <a href="../index.html#services" data-i18n="nav.services">Услуги</a>
+        <a href="../index.html#work" data-i18n="nav.work">Работы</a>
+        <a href="../demos.html" data-i18n="nav.demos">Демо</a>
+        <a href="../index.html#process" data-i18n="nav.process">Процесс</a>
+        <a href="../index.html#about" data-i18n="nav.about">О нас</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Контакты</a>
+      </div>
+      <div class="footer-contact">
+        <strong data-i18n="footer.contact_title">Контакты</strong>
+        <a href="mailto:info@sqorapro.com">info@sqorapro.com</a>
+        <a href="tel:+77772894949">+7 777 289 49 49</a>
+        <span data-i18n="contact.address">Алматы, ул. Чайковского 131</span>
+      </div>
+    </div>
+    <div class="container legal-row">
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.l_privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer.l_data">Data Processing</a>
+        <a href="#" data-i18n="footer.l_cookie">Cookie Policy</a>
+        <a href="#" data-i18n="footer.l_terms">Terms of Use</a>
+        <a href="#" data-i18n="footer.l_offer">Public Offer</a>
+        <span class="legal-note" data-i18n="footer.legal_note">Юридические документы сгенерированы Leqalo.com</span>
+      </div>
+      <div class="legal-right">
+        <span data-i18n="footer.copy">© 2026 SQORA PRO. Все права защищены.</span>
+        <span class="built-by" data-i18n="footer.built">Сделано с ♥ командой SQORA PRO</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../i18n.js"></script>
+  <script src="../script.js"></script>
+  <script src="demos-data.js"></script>
+  <script>window.PAGE_ID = 'aurelia-peak';</script>
+  <script src="demo-page-script.js"></script>
+</body>
+</html>

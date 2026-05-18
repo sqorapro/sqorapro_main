@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQORA PRO - Digital Product Studio</title>
+  <meta name="description" content="Premium website mockup for SQORA PRO, a digital product studio in Almaty, Kazakhstan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="i18n.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body style="font-family: Inter">
+  <nav class="site-nav" aria-label="Primary navigation" style="color: rgb(255, 76, 76); font-family: Consolas; height: 62px; background-color: rgb(243, 243, 243); width: 1180px; padding: 10px 12px 10px 18px; opacity: 1; text-align: center">
+    <a class="wordmark" href="#hero" aria-label="SQORA PRO home">
+      <img src="sqora-logo.png" alt="SQORA PRO" style="object-fit: fill; opacity: 1; height: 40px">
+    </a>
+    <div class="nav-links" aria-label="Sections">
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#work" data-i18n="nav.work">Работы</a>
+      <a href="demos.html" data-i18n="nav.demos">Демо</a>
+      <a href="#process" data-i18n="nav.process">Процесс</a>
+      <a href="#about" data-i18n="nav.about">О нас</a>
+      <a href="#contact" data-i18n="nav.contact">Контакты</a>
+    </div>
+    <div class="nav-actions">
+      <div class="language-toggle" aria-label="Language selector">
+        <button type="button" data-lang="ru" class="active">RU</button>
+        <span>|</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="nav-cta" href="#contact" data-i18n="nav.cta">Обсудить проект <span aria-hidden="true">→</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#work" data-i18n="nav.work">Работы</a>
+      <a href="demos.html" data-i18n="nav.demos">Демо</a>
+      <a href="#process" data-i18n="nav.process">Процесс</a>
+      <a href="#about" data-i18n="nav.about">О нас</a>
+      <a href="#contact" data-i18n="nav.contact">Контакты</a>
+      <div class="mobile-menu-meta">
+        <div class="language-toggle">
+          <button type="button" data-lang="ru" class="active">RU</button>
+          <span>|</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a class="nav-cta" href="#contact" data-i18n="nav.cta">Обсудить проект <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <div class="eyebrow dark"><span data-i18n="hero.badge">DIGITAL PRODUCT STUDIO</span></div>
+          <h1 class="hero-title">
+            <span style="font-family: Consolas">Think.</span>
+            <span style="font-family: Consolas">Build.</span>
+            <span style="font-family: Consolas">Ship.</span>
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero.sub">Проектируем и создаём высокопроизводительные цифровые продукты для стартапов и амбициозных компаний.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact" data-i18n="hero.cta_primary">Начать проект <span aria-hidden="true">→</span></a>
+            <a class="btn secondary-dark" href="#work" data-i18n="hero.cta_secondary">Смотреть работы</a>
+          </div>
+          <div class="trusted">
+            <span data-i18n="hero.trusted">РАБОТАЛИ С</span>
+            <div class="trusted-logos" aria-label="Trusted logos">
+              <img src="logos/ikhlas.webp" alt="Ikhlas" style="border-radius: 5px">
+              <img src="logos/gamisoft.png?v=2" alt="Gamisoft">
+              <img src="logos/unesco.svg" alt="UNESCO">
+              <img src="logos/ebrd.png" alt="EBRD">
+            </div>
+          </div>
+        </div>
+
+        <div class="globe-wrap reveal" aria-label="Animated service globe">
+          <div class="globe-stage" id="globeStage">
+            <canvas id="globeCanvas" width="760" height="760"></canvas>
+            <div class="orbit orbit-one" aria-hidden="true"></div>
+            <div class="orbit orbit-two" aria-hidden="true"></div>
+            <div class="orbit orbit-three" aria-hidden="true"></div>
+
+            <button type="button" class="float-card card-web" data-pole="top" style="width: 190px">
+              <span class="float-icon"><img src="icons/globe.png" alt=""></span>
+              <strong data-i18n="services.s1_name">Web Development</strong>
+              <p class="float-desc" data-i18n="hero.card1_desc">Быстрые веб-приложения</p>
+            </button>
+            <button type="button" class="float-card card-mobile" data-pole="right">
+              <span class="float-icon"><img src="icons/mobile-code.png" alt=""></span>
+              <strong data-i18n="services.s2_name" style="height: 42px">Мобильные
+приложения</strong>
+              <p class="float-desc" data-i18n="hero.card2_desc">Нативный iOS и Android</p>
+            </button>
+            <button type="button" class="float-card card-bots" data-pole="bottom">
+              <span class="float-icon"><img src="icons/telegram.png" alt=""></span>
+              <strong data-i18n="services.s3_name">Telegram Bots
+&amp; Mini Apps</strong>
+              <p class="float-desc" data-i18n="hero.card3_desc">Умная автоматизация в чате</p>
+            </button>
+            <button type="button" class="float-card card-mvp" data-pole="left">
+              <span class="float-icon"><img src="icons/lightning.png" alt=""></span>
+              <strong data-i18n="services.s4_name">MVP in 5 Days</strong>
+              <p class="float-desc" data-i18n="hero.card4_desc">От идеи к живому продукту</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showreel">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow" data-i18n="showreel.eyebrow">ВИТРИНА ВОЗМОЖНОСТЕЙ</div>
+          <h2 style="font-family: Consolas" data-i18n="showreel.headline">Каждая секция доказывает, что мы умеем строить.</h2>
+          <p data-i18n="showreel.sub">Не декоративные анимации. Продуктовые интерфейсы, которые клиент может представить в своём бизнесе.</p>
+        </div>
+        <div class="showreel-grid">
+          <article class="showreel-card reveal">
+            <div class="code-rain" aria-hidden="true">
+              <span>const launch = ship();</span>
+              <span>await bot.reply(scope)</span>
+              <span>pipeline.status = live</span>
+            </div>
+            <h3 data-i18n="showreel.card1_title">Интерактивные системы</h3>
+            <p data-i18n="showreel.card1_desc">Дашборды, рабочие процессы и операционный софт, который ощущается живым.</p>
+          </article>
+          <article class="showreel-card reveal">
+            <div class="route-map" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <i></i>
+            </div>
+            <h3 data-i18n="showreel.card2_title">AI-маршрутизация</h3>
+            <p data-i18n="showreel.card2_desc">Умный приём, скоринг, анализ и автоматизированная логика следующего шага.</p>
+          </article>
+          <article class="showreel-card reveal">
+            <div class="device-stack" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3 data-i18n="showreel.card3_title">Кросс-платформенное качество</h3>
+            <p data-i18n="showreel.card3_desc">Веб, мобайл, Telegram и админ-панели в едином продуктовом языке.</p>
+          </article>
+          <article class="showreel-card reveal">
+            <div class="launch-meter" aria-hidden="true">
+              <strong>96%</strong>
+              <span></span>
+            </div>
+            <h3 data-i18n="showreel.card4_title">Скорость запуска</h3>
+            <p data-i18n="showreel.card4_desc">Быстрые прототипы, которые выглядят так, будто у компании есть вкус.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof light">
+      <div class="container reveal">
+        <div class="eyebrow" data-i18n="proof.eyebrow">ОПЫТ КОМАНДЫ</div>
+        <div class="proof-logos" aria-label="Team experience logo grid">
+          <span style="background-color: rgb(174, 234, 255)"><img src="logos/ikhlas.webp" alt="Ikhlas" style="border-radius: 12px"><b>Ikhlas</b></span>
+          <span style="background-color: rgb(174, 234, 255); opacity: 10"><img src="logos/gamisoft.png?v=2" alt="Gamisoft" style="border-width: 0px 0px 0px 10px; border-style: solid"></span>
+          <span style="background-color: rgb(174, 234, 255)"><img src="logos/ebrd.png" alt="EBRD"></span>
+          <span style="background-color: rgb(174, 234, 255)"><img src="logos/unesco.svg" alt="UNESCO"></span>
+          <span style="background-color: rgb(174, 234, 255)"><img src="logos/leqalo.png?v=2" alt="Leqalo" style="height: 80px; width: 100px"></span>
+          <span style="background-color: rgb(174, 234, 255)"><img src="logos/cheqon.png" alt="Cheqon"></span>
+        </div>
+        <div class="proof-counters">
+          <article>
+            <strong><span class="counter" data-target="2">2</span></strong>
+            <p><span data-i18n="proof.stat1_label">Корпоративные проекты</span><br><small class="stat-note" data-i18n="proof.stat1_note">Грант ЕБРР</small></p>
+          </article>
+          <article>
+            <strong><span class="counter" data-target="4">0</span></strong>
+            <p data-i18n="proof.stat2_label">Собственных SaaS</p>
+          </article>
+          <article>
+            <strong><span class="counter" data-target="50" data-suffix="+">50+</span></strong>
+            <p data-i18n="proof.stat3_label">Мобильных приложений</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow" data-i18n="services.eyebrow">УСЛУГИ</div>
+          <h2 style="font-family: Consolas" data-i18n="services.headline">Программное обеспечение, которое работает с первого клика.</h2>
+          <p data-i18n="services.sub">Полный цикл для современных запусков, внутренних инструментов и клиентских цифровых продуктов.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-icon"><img src="icons/globe.png" alt=""></div>
+            <h3 data-i18n="services.s1_name">Веб-разработка</h3>
+            <p data-i18n="services.s1_desc">Премиальные маркетинговые сайты, дашборды и production-приложения с чётким UX и масштабируемой архитектурой.</p>
+            <div class="service-visual web-visual" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="tech-row">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>TanStack</span>
+            </div>
+          </article>
+          <article class="service-card reveal" style="background-color: rgb(251, 253, 254)">
+            <div class="service-icon"><img src="icons/mobile-code.png" alt=""></div>
+            <h3 data-i18n="services.s2_name">Мобильные приложения</h3>
+            <p data-i18n="services.s2_desc">Нативные iOS и Android продукты для быстрых релизных циклов и чистой поддержки.</p>
+            <div class="service-visual phone-visual" aria-hidden="true">
+              <div class="phone-shell">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="phone-pulse"></div>
+            </div>
+            <div class="tech-row">
+              <span>Swift</span>
+              <span>Kotlin</span>
+              <span>iOS</span>
+              <span>Android</span>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon"><img src="icons/telegram.png" alt=""></div>
+            <h3 data-i18n="services.s3_name">Telegram Боты и Mini Apps</h3>
+            <p data-i18n="services.s3_desc">Telegram-нативные рабочие процессы, автоматизации и мини-приложения для команд, которые уже живут в чате.</p>
+            <div class="service-visual bot-visual" aria-hidden="true">
+              <span>Brief received</span>
+              <span>AI routes task</span>
+              <span>Client gets update</span>
+            </div>
+            <div class="tech-row">
+              <span>Node.js</span>
+              <span>Grammy</span>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon"><img src="icons/lightning.png" alt=""></div>
+            <h3 data-i18n="services.s4_name">MVP за 5 дней</h3>
+            <p data-i18n="services.s4_desc">AI-assisted прототипирование для проверки направления продукта до того, как роадмап станет дорогим.</p>
+            <div class="service-visual sprint-visual" aria-hidden="true">
+              <span data-day="01"></span>
+              <span data-day="02"></span>
+              <span data-day="03"></span>
+              <span data-day="04"></span>
+              <span data-day="05"></span>
+            </div>
+            <div class="tech-row">
+              <span>Lovable</span>
+              <span>Windsurf</span>
+              <span>AI-assisted</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ai-brief" id="brief">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow" data-i18n="aibrief.eyebrow">AI-БРИФ</div>
+          <h2 style="font-family: Consolas" data-i18n="aibrief.headline">Умный первый разговор.</h2>
+          <p data-i18n="aibrief.sub">Превратите черновую идею в практический скоуп, сроки и оценку совпадения — до стартового звонка.</p>
+        </div>
+        <div class="brief-card reveal">
+          <div class="brief-input">
+            <label for="projectBrief" data-i18n="aibrief.input_label">Что строим?</label>
+            <textarea id="projectBrief" data-i18n-placeholder="aibrief.placeholder" placeholder="Опишите задачу... Например: нужен Telegram-бот для записи клиентов, интеграция с CRM, запуск через месяц."></textarea>
+            <div class="chip-row" aria-label="Project type chips">
+              <button type="button" data-i18n="aibrief.chip1">Веб-сайт</button>
+              <button type="button" data-i18n="aibrief.chip2">Мобильное приложение</button>
+              <button type="button" class="active" data-i18n="aibrief.chip3">Telegram Bot</button>
+              <button type="button" data-i18n="aibrief.chip4">MVP</button>
+            </div>
+            <button class="send-brief" type="button"><span data-i18n="aibrief.send">Отправить бриф</span> <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="brief-output" aria-live="polite">
+            <div class="panel-top">
+              <span data-i18n="aibrief.analyst">AI аналитик</span>
+              <strong data-i18n="aibrief.fit">Совпадение</strong>
+            </div>
+            <div class="ai-lines" id="aiLines"></div>
+            <div class="cursor-line"><span class="cursor" aria-hidden="true"></span></div>
+            <div class="ai-tags">
+              <span id="aiTimeline">Срок: 2-3 недели</span>
+              <strong id="aiFitScore">Совпадение: 96%</strong>
+            </div>
+            <div class="signal-map" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-study light" id="work">
+      <div class="container">
+        <div class="case-card reveal">
+          <div class="case-copy">
+            <div class="eyebrow" data-i18n="work.eyebrow">КЕЙС</div>
+            <h2 style="font-family: Consolas">MENTOR EXCELLENCE SYSTEM</h2>
+            <div class="tag-row">
+              <span data-i18n="work.case_tag1">Веб-дашборд</span>
+              <span data-i18n="work.case_tag2">Telegram Бот</span>
+              <span data-i18n="work.case_tag3">EdTech</span>
+              <span data-i18n="work.case_tag4">Грант ЕБРР</span>
+            </div>
+            <div class="metrics-row">
+              <article>
+                <strong>1,335</strong>
+                <span data-i18n="work.m1_label">менти в системе</span>
+              </article>
+              <article>
+                <strong>153</strong>
+                <span data-i18n="work.m2_label">менторов</span>
+              </article>
+              <article>
+                <strong>3</strong>
+                <span data-i18n="work.m3_label">недели до запуска</span>
+              </article>
+              <article>
+                <strong>$20K→$1.5K</strong>
+                <span data-i18n="work.m4_label">vs SaaS-альтернативы</span>
+              </article>
+            </div>
+            <blockquote data-i18n="work.quote">Менторы не заполняют никаких Excel-таблиц. Всё через телефон в Telegram за 30 секунд.</blockquote>
+            <a class="btn case-button" href="#contact" data-i18n="work.demo">Открыть демо <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="dashboard-mock" aria-label="Dashboard mockup">
+            <div class="dash-header">
+              <div>
+                <span class="dash-dot"></span>
+                Mentor Ops
+              </div>
+              <strong>96% synced</strong>
+            </div>
+            <div class="dash-stats">
+              <span>153 mentors</span>
+              <span>1,335 mentees</span>
+              <span>30 sec report</span>
+            </div>
+            <div class="dash-table">
+              <div class="dash-row head">
+                <span>Mentor</span>
+                <span>Region</span>
+                <span>Status</span>
+              </div>
+              <div class="dash-row">
+                <span>Aigerim K.</span>
+                <span>Almaty</span>
+                <strong>Active</strong>
+              </div>
+              <div class="dash-row">
+                <span>Rustem A.</span>
+                <span>Astana</span>
+                <strong>Matched</strong>
+              </div>
+              <div class="dash-row">
+                <span>Dinara S.</span>
+                <span>Shymkent</span>
+                <strong>Review</strong>
+              </div>
+              <div class="dash-row">
+                <span>Arman N.</span>
+                <span>Karaganda</span>
+                <strong>Active</strong>
+              </div>
+            </div>
+            <div class="dash-chart" aria-hidden="true">
+              <span style="height: 44%"></span>
+              <span style="height: 62%"></span>
+              <span style="height: 50%"></span>
+              <span style="height: 82%"></span>
+              <span style="height: 68%"></span>
+              <span style="height: 93%"></span>
+              <span style="height: 74%"></span>
+            </div>
+            <div class="live-feed" aria-hidden="true">
+              <span>Telegram report synced</span>
+              <span>Mentor pair updated</span>
+              <span>Dashboard refreshed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow" data-i18n="process.eyebrow">ПРОЦЕСС</div>
+          <h2 data-i18n="process.headline">Достаточно гибкие чтобы двигаться быстро. Достаточно структурированные чтобы запускать.</h2>
+        </div>
+        <div class="process-table reveal">
+          <article>
+            <span class="process-icon"><img src="icons/magnifier.png" alt=""></span>
+            <span class="process-num">01</span>
+            <h3 data-i18n="process.s1_title">Исследование</h3>
+            <p data-i18n="process.s1_desc">Скоуп, пользователи, ограничения и первая версия результата.</p>
+          </article>
+          <article>
+            <span class="process-icon"><img src="icons/document.png" alt=""></span>
+            <span class="process-num">02</span>
+            <h3 data-i18n="process.s2_title">Предложение</h3>
+            <p data-i18n="process.s2_desc">Чёткий бюджет, сроки, вехи и риски продукта.</p>
+          </article>
+          <article>
+            <span class="process-icon"><img src="icons/browser.png" alt=""></span>
+            <span class="process-num">03</span>
+            <h3 data-i18n="process.s3_title">Дизайн и прототип</h3>
+            <p data-i18n="process.s3_desc">Направление интерфейса, ключевые флоу и кликабельная логика продукта.</p>
+          </article>
+          <article>
+            <span class="process-icon"><img src="icons/mobile-code.png" alt=""></span>
+            <span class="process-num">04</span>
+            <h3 data-i18n="process.s4_title">Разработка и итерации</h3>
+            <p data-i18n="process.s4_desc">Еженедельный прогресс, плотные обратные связи и production-код.</p>
+          </article>
+          <article>
+            <span class="process-icon"><img src="icons/rocket.png" alt=""></span>
+            <span class="process-num">05</span>
+            <h3 data-i18n="process.s5_title">Запуск и поддержка</h3>
+            <p data-i18n="process.s5_desc">Деплой, измерение, стабилизация и постоянное улучшение после релиза.</p>
+          </article>
+          <div class="process-signal" aria-hidden="true"></div>
+        </div>
+        <a class="md-note reveal" href="#contact" data-i18n="process.note">Наш MD отвечает в течение 2 часов <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="section testimonials light" id="about">
+      <div class="container">
+        <div class="section-header with-control reveal">
+          <div>
+            <div class="eyebrow" data-i18n="testimonials.eyebrow">ОТЗЫВЫ</div>
+            <h2 data-i18n="testimonials.headline">Клиенты запоминают спокойную доставку.</h2>
+          </div>
+          <button class="pause-carousel" type="button" aria-pressed="false" data-i18n="testimonials.pause">Пауза</button>
+        </div>
+        <div class="testimonial-window reveal">
+          <div class="testimonial-track" id="testimonialTrack">
+            <article class="testimonial-card">
+              <p>«Менторы не заполняют никаких Excel-таблиц. Всё через Telegram за 30 секунд.»</p>
+              <div class="author">
+                <span>ME</span>
+                <div>
+                  <strong>Mentor Excellence Client</strong>
+                  <small>Program Operations Lead</small>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card placeholder">
+              <span class="coming-soon">Coming soon</span>
+              <p data-i18n="testimonials.p2_quote">Это место зарезервировано под следующий клиентский отзыв.</p>
+              <div class="author">
+                <span>—</span>
+                <div>
+                  <strong data-i18n="testimonials.p_name">Future Client</strong>
+                  <small data-i18n="testimonials.p_role">To be announced</small>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card placeholder">
+              <span class="coming-soon">Coming soon</span>
+              <p data-i18n="testimonials.p3_quote">Сюда мы добавим настоящую цитату после следующего проекта.</p>
+              <div class="author">
+                <span>—</span>
+                <div>
+                  <strong data-i18n="testimonials.p_name">Future Client</strong>
+                  <small data-i18n="testimonials.p_role">To be announced</small>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card placeholder">
+              <span class="coming-soon">Coming soon</span>
+              <p data-i18n="testimonials.p4_quote">Четвёртый слот — настоящий отзыв появится после сдачи проекта.</p>
+              <div class="author">
+                <span>—</span>
+                <div>
+                  <strong data-i18n="testimonials.p_name">Future Client</strong>
+                  <small data-i18n="testimonials.p_role">To be announced</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow" data-i18n="products.eyebrow">НАШИ ПРОДУКТЫ</div>
+          <h2 style="font-family: Consolas" data-i18n="products.headline">Мы не просто строим для клиентов. Мы строим продукты сами.</h2>
+          <p data-i18n="products.sub">Это значит, что мы понимаем ваш бизнес изнутри.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card reveal">
+            <span class="status live" data-i18n="products.live">Работает</span>
+            <img class="product-logo" src="logos/cheqon.png" alt="Cheqon">
+            <h3>Cheqon.com</h3>
+            <p data-i18n="products.cheqon_desc">Генератор счетов и актов для фрилансеров и микробизнеса в Казахстане.</p>
+            <div class="product-preview receipts-preview" aria-hidden="true" style="background-position: center bottom; padding: 22px 24px 44px; margin: 0px; border-radius: 8px">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <span class="status live" data-i18n="products.live">Работает</span>
+            <img class="product-logo" src="logos/leqalo.png?v=2" alt="Leqalo">
+            <h3>Leqalo.com</h3>
+            <p data-i18n="products.leqalo_desc">5 обязательных юридических документов для вашего казахстанского сайта — за 2 минуты.</p>
+            <div class="product-preview legal-preview" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <span class="status live" data-i18n="products.live">Работает</span>
+            <img class="product-logo" src="logos/skidqi.webp" alt="Skidqi">
+            <h3>Skidqi.com</h3>
+            <p data-i18n="products.skidqi_desc">Маркетплейс скидок, где каждое объявление показывает реальную цену до и после.</p>
+            <div class="product-preview discount-preview" aria-hidden="true">
+              <span>-20%</span>
+              <span>-35%</span>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <span class="status soon" data-i18n="products.soon">Скоро</span>
+            <img class="product-logo" src="logos/runqit.png" alt="Runqit">
+            <h3>Runqit.com</h3>
+            <p data-i18n="products.runqit_desc">AI-маркетинговые планы для малого бизнеса.</p>
+            <div class="product-preview run-preview" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team light">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow" data-i18n="team.eyebrow">КОМАНДА</div>
+          <h2 data-i18n="team.headline">Маленькая senior-команда. Прямое владение.</h2>
+          <p data-i18n="team.sub">Вы работаете напрямую с теми, кто строит ваш продукт. Без аккаунт-менеджеров.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card reveal">
+            <div class="team-icon" aria-hidden="true">
+              <img src="icons/shield.png" alt="" style="object-fit: scale-down; height: 70px">
+            </div>
+            <h3 data-i18n="team.r1_name">Со-основатель и MD</h3>
+            <p class="team-tags" data-i18n="team.r1_tags">PhD · ЮНЕСКО · Бизнес-стратегия</p>
+            <p class="team-bio" data-i18n="team.r1_bio">25 лет на пересечении науки, бизнеса и образования. Ведёт переговоры с клиентами и стратегию проекта.</p>
+          </article>
+          <article class="team-card reveal">
+            <div class="team-icon" aria-hidden="true">
+              <img src="icons/mobile-code.png" alt="">
+            </div>
+            <h3 data-i18n="team.r2_name">Mobile Lead</h3>
+            <p class="team-tags" data-i18n="team.r2_tags">Swift · Kotlin · iOS и Android</p>
+            <p class="team-bio" data-i18n="team.r2_bio">8+ лет нативной мобильной разработки. Запустил приложения которыми пользуются десятки тысяч казахстанцев.</p>
+          </article>
+          <article class="team-card reveal">
+            <div class="team-icon" aria-hidden="true">
+              <img src="icons/storage.png" alt="">
+            </div>
+            <h3 data-i18n="team.r3_name">Backend Engineer</h3>
+            <p class="team-tags" data-i18n="team.r3_tags">Node.js · PostgreSQL · API</p>
+            <p class="team-bio" data-i18n="team.r3_bio">Подключается к сложным проектам. Строит масштабируемые системы, которые не падают под нагрузкой.</p>
+          </article>
+          <article class="team-card reveal">
+            <div class="team-icon" aria-hidden="true">
+              <img src="icons/cloud.png" alt="">
+            </div>
+            <h3 data-i18n="team.r4_name">AI Builder и Веб</h3>
+            <p class="team-tags" data-i18n="team.r4_tags">React · Telegram Боты · MVP</p>
+            <p class="team-bio" data-i18n="team.r4_bio">Превращает идеи в живые продукты быстро. Оркестрирует AI-инструменты — результат за дни, не месяцы.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <h2><span data-i18n="contact.headline1">Есть идея?</span><strong data-i18n="contact.headline2">Давайте построим её.</strong></h2>
+          <div class="promise-row">
+            <span data-i18n="contact.promise1">⚡ Ответим за 2 часа</span>
+            <span data-i18n="contact.promise2">🎯 Бесплатная консультация 30 минут</span>
+            <span data-i18n="contact.promise3">📋 Предложение за 24 часа</span>
+          </div>
+          <div class="contact-details">
+            <a href="mailto:info@sqorapro.com">info@sqorapro.com</a>
+            <a href="tel:+77772894949" style="font-size: 20px">+7 777 289 49 49</a>
+            <span data-i18n="contact.address">Алматы, ул. Чайковского 131</span>
+          </div>
+          <a class="telegram-button" href="https://t.me/sqorapro" target="_blank" rel="noreferrer" data-i18n="contact.telegram_btn">Написать в Telegram <span aria-hidden="true">→</span></a>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <label>
+            <span data-i18n="contact.f_name">Имя</span>
+            <input type="text" name="name" placeholder="Ваше имя" data-i18n-placeholder="contact.f_name_ph">
+          </label>
+          <label>
+            <span data-i18n="contact.f_contact">Email или Telegram</span>
+            <input type="text" name="contact" placeholder="@username или email" data-i18n-placeholder="contact.f_contact_ph">
+          </label>
+          <label>
+            <span data-i18n="contact.f_type">Тип проекта</span>
+            <select name="project-type" data-i18n-options="contact.f_type">
+              <option>Веб-разработка</option>
+              <option>Мобильное приложение</option>
+              <option>Telegram Бот</option>
+              <option>MVP за 5 дней</option>
+              <option>Другое</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="contact.f_budget">Бюджет</span>
+            <select name="budget" data-i18n-options="contact.f_budget">
+              <option>До $1K</option>
+              <option>$1K – $3K</option>
+              <option>$3K – $5K</option>
+              <option>$5K – $10K</option>
+              <option>$10K – $15K</option>
+              <option>$15K – $30K</option>
+              <option>$30K+</option>
+              <option>Обсудим</option>
+            </select>
+          </label>
+          <label class="full">
+            <span data-i18n="contact.f_msg">Сообщение</span>
+            <textarea name="message" placeholder="Расскажите о цели, сроках и что уже есть." data-i18n-placeholder="contact.f_msg_ph"></textarea>
+          </label>
+          <button type="button" id="contactSubmit" data-i18n="contact.f_submit">Отправить <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="wordmark footer-mark" href="#hero" aria-label="SQORA PRO home">
+          <img src="sqora-logo.png" alt="SQORA PRO">
+        </a>
+        <p>Think. Build. Ship.</p>
+        <p class="footer-tag" data-i18n="footer.kind">Digital Product Studio · Алматы, Казахстан</p>
+      </div>
+      <div class="footer-links">
+        <strong data-i18n="footer.nav_title">Навигация</strong>
+        <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#work" data-i18n="nav.work">Работы</a>
+        <a href="demos.html" data-i18n="nav.demos">Демо</a>
+        <a href="#process" data-i18n="nav.process">Процесс</a>
+        <a href="#about" data-i18n="nav.about">О нас</a>
+        <a href="#contact" data-i18n="nav.contact">Контакты</a>
+      </div>
+      <div class="footer-contact">
+        <strong data-i18n="footer.contact_title">Контакты</strong>
+        <a href="mailto:info@sqorapro.com">info@sqorapro.com</a>
+        <a href="tel:+77772894949">+7 777 289 49 49</a>
+        <span data-i18n="contact.address">Алматы, ул. Чайковского 131</span>
+      </div>
+    </div>
+    <div class="container legal-row">
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.l_privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer.l_data">Data Processing</a>
+        <a href="#" data-i18n="footer.l_cookie">Cookie Policy</a>
+        <a href="#" data-i18n="footer.l_terms">Terms of Use</a>
+        <a href="#" data-i18n="footer.l_offer">Public Offer</a>
+        <span class="legal-note" data-i18n="footer.legal_note">Юридические документы сгенерированы Leqalo.com</span>
+      </div>
+      <div class="legal-right">
+        <span data-i18n="footer.copy">© 2026 SQORA PRO. Все права защищены.</span>
+        <span class="built-by" data-i18n="footer.built">Сделано с ♥ командой SQORA PRO</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+<style id="__om-edit-overrides">
+#globeStage :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { color: rgb(26, 105, 214) !important }
+#globeStage :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { color: rgb(89, 122, 167) !important }
+#globeStage :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { background-color: rgb(0, 0, 0) !important }
+#globeStage :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { background-color: rgb(8, 18, 36) !important }
+#globeStage :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { color: rgb(255, 255, 255) !important }
+#contact .contact-details >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { letter-spacing: 10px !important }
+#contact .contact-details >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { letter-spacing: 1px !important }
+#contact .reveal :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >b { font-size: 20px !important }
+#contact .reveal :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >b { font-size: 16px !important }
+</style>
