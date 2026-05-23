@@ -15,11 +15,13 @@ async function convertToWebp(name, quality = 55) {
 }
 
 (async () => {
-  let q = 65;
-  let size = Infinity;
-  while (size > 100 * 1024 && q >= 20) {
-    size = await convertToWebp('tg-miniapp', q);
-    if (size > 100 * 1024) q -= 10;
+  for (const name of ['altyn-ascent', 'architectural-serenity', 'golden-ratio-law']) {
+    let q = 65;
+    let size = Infinity;
+    while (size > 100 * 1024 && q >= 20) {
+      size = await convertToWebp(name, q);
+      if (size > 100 * 1024) q -= 10;
+    }
   }
   console.log('Done.');
 })();

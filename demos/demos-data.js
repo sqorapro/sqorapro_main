@@ -506,6 +506,190 @@ const DEMOS = [
     }
   },
   {
+    id: "altyn-ascent",
+    status: "live",
+    type: "web",
+    subtype: "landing",
+    industry: "sport",
+    budgetKey: "3k",
+    budget: "от 300 000 ₸",
+    timeline: "1–2 weeks",
+    stack: ["React", "Vite", "Tailwind CSS"],
+    emoji: "🏋️",
+    thumb: "demos/thumbs/altyn-ascent.webp",
+    liveUrl: "https://altyn-ascent.sqorapros.workers.dev",
+    name: { en: "Altyn Athletic", ru: "Altyn Athletic" },
+    industry_label: { en: "Sport · Premium Fitness · Astana", ru: "Спорт · Премиум фитнес · Астана" },
+    headline: {
+      en: "Closed athletic club in the heart of Astana — body as a statement",
+      ru: "Закрытый атлетический клуб в центре Астаны — тело как заявление"
+    },
+    description: {
+      en: "Premium landing for an exclusive fitness club in Astana. Six disciplines under one philosophy: strength, functional training, boxing, yoga, group classes and personal training. Minimalist dark design with sharp typography, trainer profiles, membership tiers and group schedule. Designed to feel like a members-only club, not a public gym.",
+      ru: "Премиальный лендинг закрытого атлетического клуба в Астане. Шесть дисциплин под одной философией: силовой зал, функциональный тренинг, бокс, йога, групповые классы и персональный тренинг. Минималистичный тёмный дизайн с чёткой типографикой, профили тренеров, форматы членства и расписание групп."
+    },
+    forWhom: {
+      en: [
+        "Premium fitness clubs & athletic centers",
+        "Boxing & martial arts gyms",
+        "Yoga & pilates studios",
+        "Personal training studios",
+        "CrossFit & functional training boxes"
+      ],
+      ru: [
+        "Премиальные фитнес-клубы и атлетические центры",
+        "Залы бокса и единоборств",
+        "Студии йоги и пилатеса",
+        "Студии персонального тренинга",
+        "CrossFit и функциональные тренировки"
+      ]
+    },
+    features: {
+      en: [
+        "Closed-club premium positioning — 'We don't sell memberships, we build form'",
+        "Six discipline sections with descriptions",
+        "Trainer profiles with specializations",
+        "Three membership tiers: Start / Pro / Elite",
+        "Group class schedule",
+        "Minimalist dark design with sharp typography",
+        "Fully mobile responsive"
+      ],
+      ru: [
+        "Позиционирование закрытого клуба — «Мы не продаём абонементы»",
+        "Шесть дисциплин с описаниями",
+        "Профили тренеров со специализацией",
+        "Три формата членства: Старт / Pro / Elite",
+        "Расписание групповых занятий",
+        "Минималистичный тёмный дизайн с чёткой типографикой",
+        "Полная мобильная адаптация"
+      ]
+    }
+  },
+  {
+    id: "architectural-serenity",
+    status: "live",
+    type: "web",
+    subtype: "corporate",
+    industry: "real-estate",
+    budgetKey: "5k",
+    budget: "от 500 000 ₸",
+    timeline: "2–3 weeks",
+    stack: ["React", "Vite", "Tailwind CSS"],
+    emoji: "🏛️",
+    thumb: "demos/thumbs/architectural-serenity.webp",
+    liveUrl: "https://architectural-serenity.sqorapros.workers.dev",
+    name: { en: "Aralis — Private Real Estate", ru: "Aralis — Частная недвижимость" },
+    industry_label: { en: "Real Estate · Private Concierge · Kazakhstan", ru: "Недвижимость · Частный консьерж · Казахстан" },
+    headline: {
+      en: "Closed collection of residences, penthouses and villas — Kazakhstan & abroad",
+      ru: "Закрытая коллекция резиденций, пентхаусов и вилл в Казахстане и за рубежом"
+    },
+    description: {
+      en: "Corporate site for Aralis — a private real estate concierge, not an agency. Closed network of off-market properties: Sky Residence, Villa Alatau, Nurly Tower and others. Architectural expertise, legal protection, full confidentiality. Ultra-premium editorial design — architecture of silence as a metaphor for both property and service.",
+      ru: "Корпоративный сайт Aralis — частного консьержа по недвижимости, не агентства. Закрытая сеть объектов вне открытого рынка: Sky Residence, Villa Alatau, Nurly Tower и другие. Архитектурная экспертиза, юридическая защита, полная конфиденциальность. Ультрапремиальный редакционный дизайн — архитектура тишины как метафора."
+    },
+    forWhom: {
+      en: [
+        "Luxury real estate agencies & brokers",
+        "Private property concierge services",
+        "Developers of premium residential complexes",
+        "Investment property consultants",
+        "Relocation services for HNWI clients"
+      ],
+      ru: [
+        "Агентства элитной недвижимости и брокеры",
+        "Частные консьерж-сервисы по недвижимости",
+        "Застройщики премиальных жилых комплексов",
+        "Консультанты по инвестиционной недвижимости",
+        "Релокация для состоятельных клиентов"
+      ]
+    },
+    features: {
+      en: [
+        "Off-market property positioning — 'objects not in open access'",
+        "Property catalog with editorial photography",
+        "Four pillars: Closed network · Architectural expertise · Legal protection · Confidentiality",
+        "Six-step process: from first visit to keys",
+        "Partner profiles with credentials",
+        "Geography section: Kazakhstan & international",
+        "Ultra-minimal premium design — architecture of silence",
+        "Fully mobile responsive"
+      ],
+      ru: [
+        "Позиционирование закрытого рынка — объекты вне открытого доступа",
+        "Каталог объектов с редакционной фотографией",
+        "Четыре столпа: Закрытая сеть · Экспертиза · Защита · Конфиденциальность",
+        "Шесть шагов: от знакомства до ключей",
+        "Профили партнёров с регалиями",
+        "Раздел географии: Казахстан и международные объекты",
+        "Ультраминималистичный премиальный дизайн",
+        "Полная мобильная адаптация"
+      ]
+    }
+  },
+  {
+    id: "golden-ratio-law",
+    status: "live",
+    type: "web",
+    subtype: "corporate",
+    industry: "legal",
+    budgetKey: "5k",
+    budget: "от 500 000 ₸",
+    timeline: "2–3 weeks",
+    stack: ["React", "Vite", "Tailwind CSS"],
+    emoji: "⚖️",
+    thumb: "demos/thumbs/golden-ratio-law.webp",
+    liveUrl: "https://golden-ratio-law.sqorapros.workers.dev",
+    name: { en: "ALTAN & Partners", ru: "ALTAN & Partners" },
+    industry_label: { en: "Legal · Corporate Law · Kazakhstan", ru: "Юридические услуги · Корпоративное право · Казахстан" },
+    headline: {
+      en: "International-level law firm — Almaty & Astana",
+      ru: "Юридическая фирма международного уровня — Алматы и Астана"
+    },
+    description: {
+      en: "Corporate site for ALTAN & Partners — a Kazakhstan law firm operating across 14 jurisdictions. Nine practice areas: Corporate law, M&A, International tax, Arbitration, Business structuring, Compliance, Litigation, Asset protection, Legal support. Landmark mandates including a USD 340M deal and AIFC restructuring. Ultra-premium editorial design — law as architecture of business.",
+      ru: "Корпоративный сайт ALTAN & Partners — казахстанской юридической фирмы в 14 юрисдикциях. Девять практик: корпоративное право, M&A, международное налогообложение, арбитраж, структурирование, compliance, споры, защита активов, сопровождение. Знаковые мандаты включая сделку на 340 млн USD и реструктуризацию в МФЦА. Ультрапремиальный редакционный дизайн — право как архитектура бизнеса."
+    },
+    forWhom: {
+      en: [
+        "Law firms & legal partnerships",
+        "Corporate attorneys & consultants",
+        "Arbitration & litigation practices",
+        "Tax advisory firms",
+        "Compliance & regulatory consultants"
+      ],
+      ru: [
+        "Юридические фирмы и адвокатские партнёрства",
+        "Корпоративные адвокаты и консультанты",
+        "Арбитражные и судебные практики",
+        "Налоговые консультанты",
+        "Compliance и регуляторные консультанты"
+      ]
+    },
+    features: {
+      en: [
+        "Nine practice areas with detailed descriptions",
+        "Landmark mandate showcase with deal sizes",
+        "Partner profiles with specializations and credentials",
+        "14 jurisdictions geography section",
+        "Five-step client process",
+        "Industry expertise section",
+        "Ultra-premium editorial design — law as architecture",
+        "Fully mobile responsive"
+      ],
+      ru: [
+        "Девять практик с подробными описаниями",
+        "Витрина знаковых мандатов с объёмами сделок",
+        "Профили партнёров со специализацией и регалиями",
+        "Раздел географии: 14 юрисдикций",
+        "Пять этапов работы с клиентом",
+        "Отраслевая экспертиза",
+        "Ультрапремиальный редакционный дизайн",
+        "Полная мобильная адаптация"
+      ]
+    }
+  },
+  {
     id: "studystep-turkey",
     status: "live",
     type: "web",
