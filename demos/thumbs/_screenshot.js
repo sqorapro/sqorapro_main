@@ -2,9 +2,7 @@ const { chromium } = require('playwright');
 const path = require('path');
 
 const SITES = [
-  { url: 'https://altyn-ascent.sqorapros.workers.dev', out: 'altyn-ascent.png' },
-  { url: 'https://architectural-serenity.sqorapros.workers.dev', out: 'architectural-serenity.png' },
-  { url: 'https://golden-ratio-law.sqorapros.workers.dev', out: 'golden-ratio-law.png' },
+  { url: 'https://kenderi-global-hub.pages.dev', out: 'kenderi.png' },
 ];
 
 (async () => {

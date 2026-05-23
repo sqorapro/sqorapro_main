@@ -15,7 +15,7 @@ async function convertToWebp(name, quality = 55) {
 }
 
 (async () => {
-  for (const name of ['altyn-ascent', 'architectural-serenity', 'golden-ratio-law']) {
+  for (const name of ['kenderi']) {
     let q = 65;
     let size = Infinity;
     while (size > 100 * 1024 && q >= 20) {

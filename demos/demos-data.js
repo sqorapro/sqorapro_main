@@ -578,6 +578,56 @@ const DEMOS = [
     }
   },
   {
+    id: "kenderi",
+    status: "live",
+    type: "web",
+    subtype: "corporate",
+    industry: "logistics",
+    budgetKey: "3k",
+    budget: "от 350 000 ₸",
+    timeline: "2–3 weeks",
+    stack: ["React", "Vite", "Tailwind CSS"],
+    emoji: "✈️",
+    thumb: "demos/thumbs/kenderi.webp",
+    liveUrl: "https://kenderi-global-hub.pages.dev",
+    name: { en: "Kenderi Global Logistics", ru: "Kenderi Global Logistics" },
+    industry_label: { en: "Logistics · Freight Forwarding · Eurasia", ru: "Логистика · Грузоперевозки · Евразия" },
+    headline: {
+      en: "International freight forwarder — air, sea, rail & road since 2008",
+      ru: "Международный экспедитор — авиа, море, ж/д и авто с 2008 года"
+    },
+    description: {
+      en: "Premium corporate site for Kenderi — an international freight forwarding company operating since 2008. Air, sea, rail and road freight across Eurasia and the Middle East. 1,100+ clients worldwide, 4,068+ successful deliveries, 466 global partners. Offices in multiple countries. Editorial dark-navy design with gold accents, inspired by the precision of a private bank.",
+      ru: "Премиальный корпоративный сайт Kenderi — международного грузового экспедитора с 2008 года. Авиа, морские, железнодорожные и автомобильные грузоперевозки по Евразии и Ближнему Востоку. 1100+ клиентов, 4068+ доставок, 466 партнёров. Офисы в нескольких странах. Редакционный тёмно-синий дизайн с золотыми акцентами — точность частного банка."
+    },
+    forWhom: {
+      en: ["Freight forwarding companies", "Import & export businesses", "Manufacturing companies", "Retail & e-commerce with international supply chains"],
+      ru: ["Транспортно-экспедиторские компании", "Импортёры и экспортёры", "Производственные предприятия", "Ритейл и e-commerce с международными цепочками поставок"]
+    },
+    features: {
+      en: [
+        "Four freight modes: air, sea, rail, road",
+        "Services section with detailed descriptions",
+        "Offices map across Eurasia & Middle East",
+        "Statistics block: clients, deliveries, partners",
+        "Request a quote CTA",
+        "EN/RU language toggle",
+        "Premium editorial design — dark navy & gold",
+        "Fully mobile responsive"
+      ],
+      ru: [
+        "Четыре вида перевозок: авиа, море, ж/д, авто",
+        "Раздел услуг с подробными описаниями",
+        "Карта офисов по Евразии и Ближнему Востоку",
+        "Блок статистики: клиенты, доставки, партнёры",
+        "CTA-форма запроса котировки",
+        "Переключатель языков EN/RU",
+        "Редакционный дизайн — тёмно-синий и золотой",
+        "Полная мобильная адаптация"
+      ]
+    }
+  },
+  {
     id: "studystep-turkey",
     status: "live",
     type: "web",
