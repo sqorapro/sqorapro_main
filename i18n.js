@@ -16,7 +16,11 @@ const CONTENT = {
       sub: "We design and build high-performance digital products for startups and ambitious businesses.",
       cta_primary: "Start a Project →",
       cta_secondary: "View Our Work",
-      trusted: "TRUSTED EXPERIENCE WITH"
+      trusted: "TRUSTED EXPERIENCE WITH",
+      card1_desc: "Marketing sites, SaaS dashboards and production apps — sharp UX, scalable architecture, fast delivery.",
+      card2_desc: "Native iOS and Android apps built for real release cycles — no cross-platform shortcuts.",
+      card3_desc: "Bots, Mini Apps and CRM integrations for teams already living inside Telegram.",
+      card4_desc: "A clickable, investor-ready MVP in 5 working days — AI-assisted, production-quality."
     },
     showreel: {
       eyebrow: "CAPABILITY SHOWREEL",
@@ -201,7 +205,11 @@ const CONTENT = {
       sub: "Создаём цифровые продукты для стартапов и растущих компаний — от идеи до релиза.",
       cta_primary: "Начать проект →",
       cta_secondary: "Смотреть работы",
-      trusted: "НАМ ДОВЕРЯЮТ"
+      trusted: "НАМ ДОВЕРЯЮТ",
+      card1_desc: "Корпоративные сайты, SaaS-дашборды и веб-приложения — продуманный UX, масштабируемая архитектура.",
+      card2_desc: "Нативные приложения для iOS и Android — полноценная мобильная разработка без компромиссов.",
+      card3_desc: "Боты, Mini Apps и интеграции с CRM для команд, которые уже работают в Telegram.",
+      card4_desc: "Кликабельный MVP за 5 рабочих дней — с помощью ИИ, готовый показать инвесторам."
     },
     showreel: {
       eyebrow: "НАШИ ВОЗМОЖНОСТИ",
