@@ -1400,6 +1400,15 @@ section[id] {
   font-size: 48px;
 }
 
+.case-sub {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  max-width: 480px;
+}
+
 .tag-row {
   margin-top: 18px;
 }
