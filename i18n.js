@@ -518,34 +518,21 @@ function initContactForm() {
 
 /* ─────────── AI Brief: call Claude via window.claude.complete ─────────── */
 
-async function sendAiBrief(userText, chipLabel) {
-  const systemPrompt = `You are a project analyst at SQORA PRO digital studio in Almaty, Kazakhstan.
-Analyze the client brief and respond ONLY with valid JSON, no markdown, no extra text:
-{
-  "line1": "Ниша: [business niche in 8 words max]",
-  "line2": "Решение: [recommended solution in 10 words max]",
-  "line3": "MVP scope: [3-4 key features, comma separated]",
-  "line4": "Риск: [main risk and 1 mitigation in 10 words]",
-  "timeline": "[realistic timeline like 2-3 недели]",
-  "fit": [number between 88 and 97]
-}`;
+const BRIEF_API_URL = "https://sqorapro-brief.sqorapros.workers.dev";
 
-  if (window.claude && typeof window.claude.complete === "function") {
-    const messages = [
-      {
-        role: "user",
-        content: `${systemPrompt}\n\n---\n\nClient brief: ${userText}\nProject type: ${chipLabel}`
-      }
-    ];
-    const raw = await window.claude.complete({ messages });
-    // Try to extract JSON even if the model wrapped it in code fences
-    const match = raw && raw.match(/\{[\s\S]*\}/);
-    if (!match) throw new Error("No JSON in response");
-    return JSON.parse(match[0]);
+async function sendAiBrief(userText, chipLabel) {
+  const res = await fetch(BRIEF_API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: userText, type: chipLabel })
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || `HTTP ${res.status}`);
   }
 
-  // Fallback for environments without window.claude
-  throw new Error("Claude SDK not available");
+  return await res.json();
 }
 
 const FALLBACK_LINES = [
