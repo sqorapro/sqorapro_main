@@ -66,11 +66,11 @@ const CONTENT = {
       chip3: "Telegram Bot",
       chip4: "MVP",
       analyst: "AI analyst",
-      fit: "Fit score",
+      fit: "Complexity",
       send: "Send Brief",
       analysing: "Analysing…",
       timeline_label: "Timeline",
-      fit_label: "Fit"
+      fit_label: "Complexity"
     },
     work: {
       eyebrow: "CASE STUDY",
@@ -255,11 +255,11 @@ const CONTENT = {
       chip3: "Telegram-бот",
       chip4: "MVP",
       analyst: "ИИ-аналитик",
-      fit: "Совпадение",
+      fit: "Сложность",
       send: "Отправить бриф",
       analysing: "Анализируем…",
       timeline_label: "Срок",
-      fit_label: "Совпадение"
+      fit_label: "Сложность"
     },
     work: {
       eyebrow: "КЕЙС",
@@ -587,8 +587,8 @@ async function renderAiResult(result) {
   if (timelineEl && result.timeline) {
     timelineEl.textContent = `${dict.timeline_label}: ${result.timeline}`;
   }
-  if (fitEl && result.fit) {
-    fitEl.textContent = `${dict.fit_label}: ${result.fit}%`;
+  if (fitEl && result.complexity) {
+    fitEl.textContent = `${dict.fit_label}: ${result.complexity}`;
   }
 }
 
