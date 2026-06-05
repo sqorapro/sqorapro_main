@@ -520,19 +520,33 @@ function initContactForm() {
 
 const BRIEF_API_URL = "https://sqorapro-brief.sqorapros.workers.dev";
 
-async function sendAiBrief(userText, chipLabel) {
-  const res = await fetch(BRIEF_API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: userText, type: chipLabel })
-  });
+async function sendAiBrief(userText, chipLabel, attempt = 1) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15000);
 
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.error || `HTTP ${res.status}`);
+  try {
+    const res = await fetch(BRIEF_API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: userText, type: chipLabel }),
+      signal: controller.signal
+    });
+    clearTimeout(timer);
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `HTTP ${res.status}`);
+    }
+
+    return await res.json();
+  } catch (err) {
+    clearTimeout(timer);
+    if (attempt < 2) {
+      await new Promise((r) => setTimeout(r, 1200));
+      return sendAiBrief(userText, chipLabel, attempt + 1);
+    }
+    throw err;
   }
-
-  return await res.json();
 }
 
 const FALLBACK_LINES = [
@@ -583,15 +597,14 @@ async function sendBriefAndRender(userText, chipLabel) {
   try {
     result = await sendAiBrief(userText, chipLabel);
   } catch (err) {
-    console.warn("AI Brief fallback:", err);
-    result = {
-      line1: FALLBACK_LINES[0],
-      line2: FALLBACK_LINES[1],
-      line3: FALLBACK_LINES[2],
-      line4: FALLBACK_LINES[3],
-      timeline: "2-3 недели",
-      fit: 96
-    };
+    console.warn("AI Brief error:", err);
+    if (output) {
+      const msg = currentLang === "ru"
+        ? "Не удалось получить ответ. Попробуйте ещё раз."
+        : "Could not get a response. Please try again.";
+      output.innerHTML = `<div class="ai-analysing" style="color:#ff6b6b">${msg}</div>`;
+    }
+    return;
   }
 
   await renderAiResult(result);
