@@ -38,9 +38,10 @@ const CONTENT = {
     proof: {
       eyebrow: "TEAM EXPERIENCE",
       stat1_label: "Corporate projects",
-      stat1_note: "EBRD grant",
+      stat1_note: "EBRD & UNESCO",
       stat2_label: "SaaS products live",
-      stat3_label: "Mobile apps shipped"
+      stat3_label: "Mobile apps tested",
+      funded: "funded by"
     },
     services: {
       eyebrow: "SERVICES",
@@ -227,9 +228,10 @@ const CONTENT = {
     proof: {
       eyebrow: "ОПЫТ КОМАНДЫ",
       stat1_label: "Корпоративных проекта",
-      stat1_note: "Грант ЕБРР",
+      stat1_note: "ЕБРР и ЮНЕСКО",
       stat2_label: "Собственных SaaS-продукта",
-      stat3_label: "Мобильных приложений"
+      stat3_label: "Протестировано приложений",
+      funded: "при финансировании"
     },
     services: {
       eyebrow: "УСЛУГИ",
