@@ -541,8 +541,13 @@ async function sendAiBrief(userText, chipLabel, attempt = 1) {
     return await res.json();
   } catch (err) {
     clearTimeout(timer);
-    if (attempt < 2) {
-      await new Promise((r) => setTimeout(r, 1200));
+    if (attempt < 3) {
+      const output = document.getElementById("aiLines");
+      if (output) {
+        const msg = currentLang === "ru" ? `Анализируем… (попытка ${attempt + 1})` : `Analysing\u2026 (attempt ${attempt + 1})`;
+        output.innerHTML = `<div class="ai-analysing">${msg}</div>`;
+      }
+      await new Promise((r) => setTimeout(r, 2500));
       return sendAiBrief(userText, chipLabel, attempt + 1);
     }
     throw err;
