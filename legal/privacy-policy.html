@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Политика конфиденциальности — SQORA PRO</title>
+  <meta name="description" content="Политика конфиденциальности ТОО «Sqora Pro» — защита персональных данных согласно законодательству РК.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; --paper:#f7f9fc; --ink:#0a1628; --muted:#5c6a7d; --line:#e5ebf3;
+      --navy:#0a1628; --accent:#0078ff; --accent-2:#00c6ff;
+      --container:1180px; --shadow-soft:0 24px 80px rgba(10,22,40,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{margin:0;color:var(--ink);background:var(--bg);font-family:"Inter",Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    ::selection{color:#fff;background:var(--accent)}
+    .container{width:min(var(--container),calc(100% - 48px));margin:0 auto}
+    .site-nav{position:fixed;top:18px;left:50%;z-index:50;display:grid;width:min(var(--container),calc(100% - 48px));grid-template-columns:auto 1fr auto;align-items:center;gap:22px;padding:10px 12px 10px 18px;border:1px solid rgba(10,22,40,.08);border-radius:8px;background:rgba(255,255,255,.9);box-shadow:0 14px 44px rgba(10,22,40,.12);transform:translateX(-50%);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+    .wordmark{display:inline-flex;align-items:center;color:var(--navy);font-family:"Syne","Inter",sans-serif;font-size:21px;font-weight:800;line-height:1;white-space:nowrap}
+    .mark-pro{margin-left:8px;color:var(--accent)}
+    .nav-links{display:flex;justify-content:center;gap:28px;color:rgba(10,22,40,.72);font-size:14px;font-weight:600}
+    .nav-links a{transition:color .18s ease}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-actions{display:flex;align-items:center;gap:14px}
+    .nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 18px;border:0;border-radius:999px;font-weight:800;font-size:14px;line-height:1;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 12px 34px rgba(0,120,255,.28);transition:transform .22s ease}
+    .nav-cta:hover{transform:translateY(-2px)}
+    .nav-toggle{display:none;width:40px;height:36px;padding:0;border:1px solid rgba(10,22,40,.14);border-radius:8px;background:rgba(255,255,255,.6);cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:4px}
+    .nav-toggle span{display:block;width:18px;height:2px;background:var(--navy);border-radius:2px;transition:transform .24s ease,opacity .2s ease}
+    .site-nav.menu-open .nav-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    .site-nav.menu-open .nav-toggle span:nth-child(2){opacity:0}
+    .site-nav.menu-open .nav-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+    .mobile-menu{display:none;grid-column:1/-1;flex-direction:column;gap:4px;padding:14px 6px 10px;border-top:1px solid rgba(10,22,40,.08);margin-top:10px}
+    .mobile-menu a{padding:12px 10px;color:var(--navy);font-size:16px;font-weight:600;border-radius:8px}
+    .mobile-menu a:hover{background:rgba(0,120,255,.08);color:var(--accent)}
+    .site-nav.menu-open .mobile-menu{display:flex}
+    .doc-hero{position:relative;padding:148px 0 56px;color:#fff;background:radial-gradient(circle at 80% 20%,rgba(0,198,255,.18),transparent 32%),linear-gradient(180deg,#050d1a 0%,#0a1628 100%);overflow:hidden}
+    .doc-hero::before{position:absolute;inset:0;pointer-events:none;content:"";background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(180deg,rgba(0,0,0,.8),transparent 82%)}
+    .doc-hero .container{position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent-2);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+    .doc-hero h1{margin:14px 0 0;font-family:"Syne","Inter",sans-serif;font-size:clamp(34px,5vw,58px);font-weight:800;line-height:1.04;max-width:18ch}
+    .doc-meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;color:rgba(255,255,255,.66);font-size:14px;font-weight:600}
+    .doc-meta b{color:var(--accent-2);font-weight:800}
+    .doc-wrap{padding:64px 0 96px;background:var(--bg)}
+    .doc-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;align-items:start}
+    .doc-toc{position:sticky;top:108px;padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+    .doc-toc strong{display:block;margin-bottom:14px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .doc-toc a{display:block;padding:7px 0;color:var(--muted);font-size:14px;font-weight:600;line-height:1.4;border-left:2px solid transparent;padding-left:12px;margin-left:-2px;transition:color .18s ease,border-color .18s ease}
+    .doc-toc a:hover{color:var(--accent);border-color:var(--accent)}
+    .doc-content{max-width:760px}
+    .doc-content section{scroll-margin-top:108px;padding-bottom:8px}
+    .doc-content h2{margin:40px 0 14px;font-family:"Consolas","Syne","Inter",monospace;font-size:26px;font-weight:800;line-height:1.18;color:var(--ink)}
+    .doc-content section:first-child h2{margin-top:0}
+    .doc-content h3{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--ink)}
+    .doc-content p{margin:0 0 14px;color:#33414f}
+    .doc-content ul{margin:0 0 16px;padding:0;list-style:none}
+    .doc-content li{position:relative;padding:6px 0 6px 26px;color:#33414f}
+    .doc-content li::before{content:"";position:absolute;left:4px;top:15px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    .doc-content li b{color:var(--ink)}
+    .doc-content a{color:var(--accent);font-weight:600}
+    .doc-content a:hover{text-decoration:underline}
+    .callout{margin:24px 0;padding:18px 22px;border-left:4px solid var(--accent);border-radius:8px;background:#f5f9ff;color:var(--ink);font-weight:600}
+    .doc-contacts{margin-top:34px;padding:26px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+    .doc-contacts p{margin:4px 0}
+    .doc-end{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    .site-footer{padding:58px 0 28px;color:rgba(255,255,255,.66);background:var(--navy)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .9fr;gap:42px;align-items:start}
+    .footer-mark{color:#fff;font-family:"Syne","Inter",sans-serif;font-size:21px;font-weight:800}
+    .footer-mark .mark-pro{color:var(--accent)}
+    .site-footer p{margin:14px 0 0;font-weight:700}
+    .footer-tag{color:rgba(255,255,255,.5);font-weight:600!important}
+    .footer-links,.footer-contact{display:flex;flex-direction:column;gap:10px}
+    .footer-links strong,.footer-contact strong{margin-bottom:6px;color:rgba(255,255,255,.92);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .footer-links a:hover,.footer-contact a:hover,.legal-row a:hover{color:var(--accent-2)}
+    .legal-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;margin-top:46px;padding:22px 0 8px;border-top:1px solid rgba(255,255,255,.1);font-size:13px}
+    .legal-links{display:flex;flex-wrap:wrap;align-items:center;gap:14px;flex:1 1 60%}
+    .legal-links a{position:relative;font-size:12px}
+    .legal-links a.is-current{color:var(--accent-2)}
+    .legal-links a:not(:last-of-type)::after{content:"·";position:absolute;right:-10px;color:rgba(255,255,255,.32)}
+    .legal-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:12px;color:rgba(255,255,255,.62)}
+    .legal-right .built-by{font-size:11px;color:rgba(255,255,255,.42)}
+    @media (max-width:960px){.doc-layout{grid-template-columns:1fr;gap:0}.doc-toc{display:none}}
+    @media (max-width:760px){
+      .nav-links{display:none}.nav-toggle{display:flex}.nav-cta{display:none}
+      .footer-grid{grid-template-columns:1fr;gap:28px}
+      .legal-row{flex-direction:column;align-items:flex-start}
+      .legal-right{align-items:flex-start}
+      .legal-links a:not(:last-of-type)::after{display:none}
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+    <a class="wordmark" href="../index.html" aria-label="SQORA PRO home"><img src="../sqora-logo.png" alt="SQORA PRO" style="height:40px;object-fit:contain"></a>
+    <div class="nav-links">
+      <a href="../index.html#services">Услуги</a>
+      <a href="../index.html#work">Работы</a>
+      <a href="../demos.html">Демо</a>
+      <a href="../index.html#process">Процесс</a>
+      <a href="../index.html#about">О нас</a>
+      <a href="../index.html#contact">Контакты</a>
+    </div>
+    <div class="nav-actions">
+      <a class="nav-cta" href="../index.html#contact">Обсудить проект <span aria-hidden="true">→</span></a>
+      <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html#services">Услуги</a>
+      <a href="../index.html#work">Работы</a>
+      <a href="../demos.html">Демо</a>
+      <a href="../index.html#process">Процесс</a>
+      <a href="../index.html#about">О нас</a>
+      <a href="../index.html#contact">Контакты</a>
+      <a href="../index.html#contact">Обсудить проект →</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="doc-hero">
+      <div class="container">
+        <div class="eyebrow">Правовая информация</div>
+        <h1>Политика конфиденциальности</h1>
+        <div class="doc-meta">
+          <span>ТОО «Sqora Pro»</span>
+          <span>Действует с: <b>9 сентября 2025 г.</b></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="doc-wrap">
+      <div class="container doc-layout">
+        <aside class="doc-toc" aria-label="Содержание">
+          <strong>Содержание</strong>
+          <a href="#s1">1. Общие положения</a>
+          <a href="#s2">2. Какие данные мы собираем</a>
+          <a href="#s3">3. Цели обработки</a>
+          <a href="#s4">4. Правовые основания</a>
+          <a href="#s5">5. Способы обработки</a>
+          <a href="#s6">6. Сроки хранения</a>
+          <a href="#s7">7. Передача третьим лицам</a>
+          <a href="#s8">8. Трансграничная передача</a>
+          <a href="#s9">9. Меры безопасности</a>
+          <a href="#s10">10. Ваши права</a>
+          <a href="#s11">11. Реализация прав</a>
+          <a href="#s12">12. Использование Cookies</a>
+          <a href="#s13">13. Сведения об Операторе</a>
+          <a href="#s14">14. Изменения в Политике</a>
+          <a href="#s15">15. Обращения и жалобы</a>
+        </aside>
+
+        <article class="doc-content">
+          <section id="s1">
+            <h2>1. Общие положения</h2>
+            <p>Настоящая Политика конфиденциальности (далее — «Политика») регулирует обработку персональных данных пользователей сайта sqorapro.com (далее — «Сайт»), принадлежащего ТОО «Sqora Pro» (далее — «Оператор»).</p>
+            <p>Использование Сайта означает безусловное согласие пользователя с настоящей Политикой и указанными в ней условиями обработки его персональных данных.</p>
+          </section>
+
+          <section id="s2">
+            <h2>2. Персональные данные, которые мы собираем</h2>
+            <p>При использовании Сайта мы можем собирать следующие категории персональных данных:</p>
+            <h3>2.1 Данные, предоставляемые добровольно:</h3>
+            <ul>
+              <li>Фамилия и имя</li>
+              <li>Адрес электронной почты</li>
+              <li>Номер телефона</li>
+              <li>Название компании (при указании)</li>
+              <li>Сообщение или комментарий</li>
+            </ul>
+            <h3>2.2 Данные, собираемые автоматически:</h3>
+            <ul>
+              <li>IP-адрес</li>
+              <li>Информация о браузере и операционной системе</li>
+              <li>Данные об активности на Сайте</li>
+              <li>Файлы cookie</li>
+              <li>Время посещения страниц</li>
+            </ul>
+          </section>
+
+          <section id="s3">
+            <h2>3. Цели обработки персональных данных</h2>
+            <p>Ваши персональные данные обрабатываются для следующих целей:</p>
+            <ul>
+              <li>Обработка и ответы на ваши обращения через контактные формы</li>
+              <li>Предоставление информации об услугах веб-разработки</li>
+              <li>Связь с вами по вопросам ваших запросов</li>
+              <li>Повышение качества сайта и предоставляемых услуг</li>
+              <li>Техническая поддержка функционирования Сайта</li>
+              <li>Проведение аналитики посещаемости и поведения пользователей</li>
+              <li>Защита от спама и мошенничества</li>
+            </ul>
+          </section>
+
+          <section id="s4">
+            <h2>4. Правовые основания обработки</h2>
+            <p>Обработка персональных данных осуществляется на основании:</p>
+            <ul>
+              <li>Согласия субъекта персональных данных на обработку его персональных данных</li>
+              <li>Исполнения обязательств по предоставлению информации об услугах</li>
+              <li>Законных интересов Оператора, связанных с ведением предпринимательской деятельности</li>
+              <li>Требований законодательства Республики Казахстан</li>
+            </ul>
+          </section>
+
+          <section id="s5">
+            <h2>5. Способы обработки персональных данных</h2>
+            <p>Мы осуществляем следующие операции с персональными данными:</p>
+            <ul>
+              <li>Сбор и систематизация</li>
+              <li>Накопление и хранение</li>
+              <li>Уточнение (обновление, изменение)</li>
+              <li>Извлечение, использование</li>
+              <li>Блокирование, удаление, уничтожение</li>
+              <li>Обезличивание персональных данных</li>
+            </ul>
+          </section>
+
+          <section id="s6">
+            <h2>6. Сроки хранения персональных данных</h2>
+            <p>Персональные данные хранятся в следующие сроки:</p>
+            <ul>
+              <li><b>Данные контактных форм:</b> 3 года с момента последнего обращения</li>
+              <li><b>Технические данные (логи):</b> 12 месяцев</li>
+              <li><b>Cookies:</b> в соответствии с настройками браузера, но не более 12 месяцев</li>
+              <li><b>Данные аналитики:</b> 24 месяца в обезличенном виде</li>
+            </ul>
+            <p>По истечении указанных сроков персональные данные подлежат удалению или обезличиванию.</p>
+          </section>
+
+          <section id="s7">
+            <h2>7. Передача данных третьим лицам</h2>
+            <p>Мы не продаём, не обмениваем и не передаём ваши персональные данные третьим лицам без вашего явного согласия, за исключением следующих случаев:</p>
+            <ul>
+              <li>При наличии вашего явного согласия на такую передачу</li>
+              <li>По запросу государственных органов РК в пределах их полномочий</li>
+              <li>Для защиты наших прав и безопасности при нарушении пользовательских соглашений</li>
+              <li>При передаче технических данных провайдерам хостинга (данные хранятся на территории РК)</li>
+            </ul>
+          </section>
+
+          <section id="s8">
+            <h2>8. Трансграничная передача данных</h2>
+            <p>Все персональные данные обрабатываются и хранятся на серверах на территории Республики Казахстан. Трансграничная передача персональных данных осуществляется только при наличии вашего явного согласия и в соответствии с требованиями законодательства РК.</p>
+          </section>
+
+          <section id="s9">
+            <h2>9. Меры безопасности</h2>
+            <p>Мы применяем необходимые и достаточные организационные и технические меры для защиты персональных данных:</p>
+            <ul>
+              <li>Защита от несанкционированного доступа к персональным данным</li>
+              <li>Своевременное выявление инцидентов несанкционированного доступа</li>
+              <li>Предотвращение возможных неблагоприятных последствий нарушений требований</li>
+              <li>SSL-шифрование при передаче данных</li>
+              <li>Ограничение доступа сотрудников к персональным данным</li>
+              <li>Регулярное резервное копирование данных</li>
+            </ul>
+          </section>
+
+          <section id="s10">
+            <h2>10. Ваши права как субъекта персональных данных</h2>
+            <p>В соответствии с законодательством Республики Казахстан вы имеете следующие права:</p>
+            <h3>10.1 Право на информацию:</h3>
+            <ul>
+              <li>Получать сведения об обработке ваших персональных данных</li>
+              <li>Знать правовые основания и цели обработки</li>
+              <li>Получать информацию о сроках обработки</li>
+            </ul>
+            <h3>10.2 Право на доступ:</h3>
+            <ul>
+              <li>Получать копии ваших персональных данных</li>
+              <li>Получать информацию об источниках данных</li>
+            </ul>
+            <h3>10.3 Право на исправление:</h3>
+            <ul>
+              <li>Требовать исправления неточных данных</li>
+              <li>Требовать дополнения неполных данных</li>
+            </ul>
+            <h3>10.4 Право на удаление:</h3>
+            <ul>
+              <li>Требовать удаления персональных данных</li>
+              <li>Требовать прекращения обработки данных</li>
+            </ul>
+            <h3>10.5 Право на отзыв согласия:</h3>
+            <ul>
+              <li>Отозвать согласие на обработку персональных данных</li>
+              <li>Отказаться от получения рекламных материалов</li>
+            </ul>
+          </section>
+
+          <section id="s11">
+            <h2>11. Порядок реализации прав</h2>
+            <p>Для реализации ваших прав направьте запрос одним из следующих способов:</p>
+            <div class="doc-contacts">
+              <p>Email: <a href="mailto:info@sqorapro.com">info@sqorapro.com</a></p>
+              <p>Телефон: <a href="tel:+77772894949">+7 777 289 49 49</a>, <a href="tel:+77013413685">+7 701 341 36 85</a></p>
+              <p>Адрес: Республика Казахстан, г. Алматы, ул. Чайковского 131</p>
+            </div>
+            <p>Ответ на ваш запрос будет направлен в течение 30 дней с момента его получения.</p>
+          </section>
+
+          <section id="s12">
+            <h2>12. Использование Cookies</h2>
+            <p>Наш сайт использует cookies для улучшения пользовательского опыта. Подробная информация об их использовании содержится в нашей <a href="cookie-policy.html">Политике использования файлов cookie</a>.</p>
+          </section>
+
+          <section id="s13">
+            <h2>13. Сведения об Операторе</h2>
+            <div class="doc-contacts">
+              <p><b>ТОО «Sqora Pro»</b></p>
+              <p>Адрес: Республика Казахстан, г. Алматы, ул. Чайковского 131</p>
+              <p>Email: <a href="mailto:info@sqorapro.com">info@sqorapro.com</a></p>
+              <p>Телефоны: <a href="tel:+77772894949">+7 777 289 49 49</a>, <a href="tel:+77013413685">+7 701 341 36 85</a></p>
+              <p>Сайт: <a href="https://sqorapro.com">sqorapro.com</a></p>
+            </div>
+          </section>
+
+          <section id="s14">
+            <h2>14. Изменения в Политике конфиденциальности</h2>
+            <p>Мы оставляем за собой право вносить изменения в настоящую Политику.</p>
+            <p>Новая версия Политики вступает в силу с момента её опубликования на Сайте, если иное не предусмотрено новой версией Политики.</p>
+            <p>Актуальная версия Политики всегда находится по адресу: <a href="https://sqorapro.com/privacy-policy">sqorapro.com/privacy-policy</a>.</p>
+          </section>
+
+          <section id="s15">
+            <h2>15. Обращения и жалобы</h2>
+            <p>В случае несогласия с действиями по обработке ваших персональных данных вы можете подать жалобу в уполномоченный орган РК по защите персональных данных — Комитет по обеспечению информационной безопасности Министерства цифрового развития, инноваций и аэрокосмической промышленности РК.</p>
+          </section>
+
+          <div class="doc-end">Настоящая Политика конфиденциальности действует с 9 сентября 2025 г.</div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="wordmark footer-mark" href="../index.html"><img src="../sqora-logo.png" alt="SQORA PRO" style="height:40px;object-fit:contain"></a>
+        <p>Think. Build. Ship.</p>
+        <p class="footer-tag">Digital Product Studio · Алматы, Казахстан</p>
+      </div>
+      <div class="footer-links">
+        <strong>Навигация</strong>
+        <a href="../index.html#services">Услуги</a>
+        <a href="../index.html#work">Работы</a>
+        <a href="../index.html#process">Процесс</a>
+        <a href="../index.html#about">О нас</a>
+        <a href="../index.html#contact">Контакты</a>
+      </div>
+      <div class="footer-contact">
+        <strong>Контакты</strong>
+        <a href="mailto:info@sqorapro.com">info@sqorapro.com</a>
+        <a href="tel:+77772894949">+7 777 289 49 49</a>
+        <span>Алматы, ул. Чайковского 131</span>
+      </div>
+    </div>
+    <div class="container legal-row">
+      <div class="legal-links">
+        <a href="privacy-policy.html" class="is-current">Политика конфиденциальности</a>
+        <a href="data-consent.html">Согласие на обработку ПД</a>
+        <a href="cookie-policy.html">Политика Cookie</a>
+        <a href="terms.html">Пользовательское соглашение</a>
+      </div>
+      <div class="legal-right">
+        <span>© 2026 SQORA PRO. Все права защищены.</span>
+        <span class="built-by">Сделано с ♥ командой SQORA PRO</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var nav=document.getElementById('siteNav');
+      var toggle=nav.querySelector('.nav-toggle');
+      toggle.addEventListener('click',function(){
+        var open=nav.classList.toggle('menu-open');
+        toggle.setAttribute('aria-expanded',open?'true':'false');
+      });
+    })();
+  </script>
+</body>
+</html>
