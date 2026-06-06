@@ -2274,8 +2274,38 @@ blockquote {
 }
 
 .contact-form .full,
-.contact-form button {
+.contact-form button,
+.contact-form .consent-label {
   grid-column: 1 / -1;
+}
+
+.consent-label {
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.consent-label input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.consent-label span {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.consent-label span a {
+  color: var(--accent-2);
+  text-decoration: underline;
 }
 
 .contact-form button {

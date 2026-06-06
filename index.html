@@ -342,7 +342,7 @@
               </article>
             </div>
             <blockquote data-i18n="work.quote">Менторы не заполняют никаких Excel-таблиц. Только нужный функционал — без лишнего. Всё через Telegram за 30 секунд.</blockquote>
-            <a class="btn case-button" href="#contact" data-i18n="work.demo">Открыть демо <span aria-hidden="true">→</span></a>
+            <a class="btn case-button" href="#contact" data-i18n="work.demo" style="display:none">Открыть демо <span aria-hidden="true">→</span></a>
           </div>
           <div class="dashboard-mock" aria-label="Dashboard mockup">
             <div class="dash-header">
@@ -458,23 +458,22 @@
         <div class="testimonial-window reveal">
           <div class="testimonial-track" id="testimonialTrack">
             <article class="testimonial-card">
-              <p>«Менторы не заполняют никаких Excel-таблиц. Всё через Telegram за 30 секунд.»</p>
+              <p data-i18n="testimonials.q1_text">«До внедрения системы лидеры каждого сообщества вручную собирали данные от своих менторов и переносили их в таблицы. Теперь менторы сами фиксируют активность через Telegram-бот, а мы видим картину по всей программе в реальном времени.»</p>
               <div class="author">
-                <span>ME</span>
+                <span>EK</span>
                 <div>
-                  <strong>Mentor Excellence Client</strong>
-                  <small>Program Operations Lead</small>
+                  <strong data-i18n="testimonials.q1_name">Эльнура К.</strong>
+                  <small data-i18n="testimonials.q1_role">Директор программы, Евразийская школа бизнеса и предпринимательства</small>
                 </div>
               </div>
             </article>
-            <article class="testimonial-card placeholder">
-              <span class="coming-soon">Coming soon</span>
-              <p data-i18n="testimonials.p2_quote">Это место зарезервировано под следующий клиентский отзыв.</p>
+            <article class="testimonial-card">
+              <p data-i18n="testimonials.q2_text">«Проект требовал создания структурированной базы данных по объектам нематериального культурного наследия с привязкой к интерактивной карте Казахстана. Команда реализовала веб-платформу с нуля — от архитектуры базы данных до хостинга и локализации домена — в рамках сроков и ТЗ ЮНЕСКО.»</p>
               <div class="author">
-                <span>—</span>
+                <span>VS</span>
                 <div>
-                  <strong data-i18n="testimonials.p_name">Future Client</strong>
-                  <small data-i18n="testimonials.p_role">To be announced</small>
+                  <strong data-i18n="testimonials.q2_name">Василий Ш.</strong>
+                  <small data-i18n="testimonials.q2_role">Директор, Allmax Ok</small>
                 </div>
               </div>
             </article>
@@ -515,8 +514,8 @@
         <div class="product-grid">
           <article class="product-card reveal">
             <span class="status live" data-i18n="products.live">Работает</span>
-            <img class="product-logo" src="logos/cheqon.png" alt="Cheqon">
-            <h3>Cheqon.com</h3>
+            <a href="https://cheqon.com" target="_blank" rel="noreferrer"><img class="product-logo" src="logos/cheqon.png" alt="Cheqon"></a>
+            <h3><a href="https://cheqon.com" target="_blank" rel="noreferrer" style="color:inherit;text-decoration:none">Cheqon.com</a></h3>
             <p data-i18n="products.cheqon_desc">Генератор счетов и актов для фрилансеров и микробизнеса в Казахстане.</p>
             <div class="product-preview receipts-preview" aria-hidden="true" style="background-position: center bottom; padding: 22px 24px 44px; margin: 0px; border-radius: 8px">
               <span></span>
@@ -526,8 +525,8 @@
           </article>
           <article class="product-card reveal">
             <span class="status live" data-i18n="products.live">Работает</span>
-            <img class="product-logo" src="logos/leqalo.png?v=2" alt="Leqalo">
-            <h3>Leqalo.com</h3>
+            <a href="https://leqalo.com" target="_blank" rel="noreferrer"><img class="product-logo" src="logos/leqalo.png?v=2" alt="Leqalo"></a>
+            <h3><a href="https://leqalo.com" target="_blank" rel="noreferrer" style="color:inherit;text-decoration:none">Leqalo.com</a></h3>
             <p data-i18n="products.leqalo_desc">5 обязательных юридических документов для вашего казахстанского сайта — за 2 минуты.</p>
             <div class="product-preview legal-preview" aria-hidden="true">
               <span></span>
@@ -537,9 +536,9 @@
           </article>
           <article class="product-card reveal">
             <span class="status live" data-i18n="products.live">Работает</span>
-            <img class="product-logo" src="logos/skidqi.webp" alt="Skidqi">
-            <h3>Skidqi.com</h3>
-            <p data-i18n="products.skidqi_desc">Маркетплейс скидок, где каждое объявление показывает реальную цену до и после.</p>
+            <a href="https://skidqi.com" target="_blank" rel="noreferrer"><img class="product-logo" src="logos/skidqi.webp" alt="Skidqi"></a>
+            <h3><a href="https://skidqi.com" target="_blank" rel="noreferrer" style="color:inherit;text-decoration:none">Skidqi.com</a></h3>
+            <p data-i18n="products.skidqi_desc">Доска объявлений со скидками в Казахстане.</p>
             <div class="product-preview discount-preview" aria-hidden="true">
               <span>-20%</span>
               <span>-35%</span>
@@ -547,8 +546,8 @@
           </article>
           <article class="product-card reveal">
             <span class="status soon" data-i18n="products.soon">Скоро</span>
-            <img class="product-logo" src="logos/runqit.png" alt="Runqit">
-            <h3>Runqit.com</h3>
+            <a href="https://runqit.com" target="_blank" rel="noreferrer"><img class="product-logo" src="logos/runqit.png" alt="Runqit"></a>
+            <h3><a href="https://runqit.com" target="_blank" rel="noreferrer" style="color:inherit;text-decoration:none">Runqit.com</a></h3>
             <p data-i18n="products.runqit_desc">AI-маркетинговые планы для малого бизнеса.</p>
             <div class="product-preview run-preview" aria-hidden="true">
               <span></span>
@@ -627,8 +626,8 @@
             <input type="text" name="name" placeholder="Ваше имя" data-i18n-placeholder="contact.f_name_ph">
           </label>
           <label>
-            <span data-i18n="contact.f_contact">Email или Telegram</span>
-            <input type="text" name="contact" placeholder="@username или email" data-i18n-placeholder="contact.f_contact_ph">
+            <span data-i18n="contact.f_contact">Email или Телефон</span>
+            <input type="text" name="contact" placeholder="email@example.com или +7..." data-i18n-placeholder="contact.f_contact_ph">
           </label>
           <label>
             <span data-i18n="contact.f_type">Тип проекта</span>
@@ -656,6 +655,10 @@
           <label class="full">
             <span data-i18n="contact.f_msg">Сообщение</span>
             <textarea name="message" placeholder="Расскажите о цели, сроках и что уже есть." data-i18n-placeholder="contact.f_msg_ph"></textarea>
+          </label>
+          <label class="full consent-label">
+            <input type="checkbox" name="consent" id="consentCheck" required>
+            <span data-i18n="contact.f_consent">Я соглашаюсь с <a href="/terms" target="_blank">Пользовательским соглашением</a>, <a href="/privacy" target="_blank">Политикой конфиденциальности</a>, <a href="/cookies" target="_blank">Политикой Cookie</a> и подтверждаю согласие на обработку данных.</span>
           </label>
           <button type="button" id="contactSubmit" data-i18n="contact.f_submit">Отправить <span aria-hidden="true">→</span></button>
         </form>
