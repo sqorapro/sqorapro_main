@@ -70,6 +70,7 @@
     .site-footer{padding:58px 0 28px;color:rgba(255,255,255,.66);background:var(--navy)}
     .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .9fr;gap:42px;align-items:start}
     .footer-mark{color:#fff;font-family:"Syne","Inter",sans-serif;font-size:21px;font-weight:800}
+    .footer-mark img{filter:brightness(0) invert(1)}
     .footer-mark .mark-pro{color:var(--accent)}
     .site-footer p{margin:14px 0 0;font-weight:700}
     .footer-tag{color:rgba(255,255,255,.5);font-weight:600!important}
@@ -83,6 +84,8 @@
     .legal-links a:not(:last-of-type)::after{content:"·";position:absolute;right:-10px;color:rgba(255,255,255,.32)}
     .legal-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:12px;color:rgba(255,255,255,.62)}
     .legal-right .built-by{font-size:11px;color:rgba(255,255,255,.42)}
+    .legal-right .built-by a{color:rgba(255,255,255,.62);text-decoration:underline;text-underline-offset:2px}
+    .legal-right .built-by a:hover{color:var(--accent-2)}
     @media (max-width:960px){.doc-layout{grid-template-columns:1fr;gap:0}.doc-toc{display:none}}
     @media (max-width:760px){
       .nav-links{display:none}.nav-toggle{display:flex}.nav-cta{display:none}
@@ -363,7 +366,7 @@
       </div>
       <div class="legal-right">
         <span>© 2026 SQORA PRO. Все права защищены.</span>
-        <span class="built-by">Сделано с ♥ командой SQORA PRO</span>
+        <span class="built-by">Юридические документы сгенерированы <a href="https://leqalo.com" target="_blank" rel="noopener">Leqalo.com</a></span>
       </div>
     </div>
   </footer>
