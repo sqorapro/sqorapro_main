@@ -434,7 +434,9 @@ const CONTENT = {
   }
 };
 
-let currentLang = "ru";
+let currentLang = (function() {
+  try { return localStorage.getItem('sqora_lang') || 'ru'; } catch(e) { return 'ru'; }
+})();
 
 function lookupKey(dict, path) {
   const parts = path.split(".");
@@ -523,6 +525,7 @@ function switchLang(lang) {
   }
 
   document.documentElement.lang = lang;
+  try { localStorage.setItem('sqora_lang', lang); } catch(e) {}
 }
 
 function initLang() {
