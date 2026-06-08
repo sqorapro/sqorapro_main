@@ -287,9 +287,9 @@
       const typeLabel = L.types[d.type] || d.type;
       const subLabel = d.subtype && L.subs[d.subtype] ? L.subs[d.subtype] : "";
       const statusBadge =
-        d.status === "live"
-          ? `<span class="demo-badge badge-live"><span class="dot"></span>${L.live}</span>`
-          : `<span class="demo-badge badge-soon">${L.soon}</span>`;
+        d.status === "soon"
+          ? `<span class="demo-badge badge-soon">${L.soon}</span>`
+          : "";
 
       const tagPills = (d.stack || [])
         .slice(0, 3)

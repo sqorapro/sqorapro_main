@@ -14,13 +14,21 @@ const CONTENT = {
     hero: {
       badge: "● DIGITAL PRODUCT STUDIO",
       sub: "We design and build high-performance digital products for startups and ambitious businesses.",
-      cta_primary: "Start a Project →",
+      cta_primary: "Let's Talk →",
       cta_secondary: "View Our Work",
       trusted: "TRUSTED EXPERIENCE WITH",
       card1_desc: "Marketing sites, SaaS dashboards and production apps — sharp UX, scalable architecture, fast delivery.",
       card2_desc: "Native iOS and Android apps built for real release cycles — no cross-platform shortcuts.",
       card3_desc: "Bots, Mini Apps and CRM integrations for teams already living inside Telegram.",
       card4_desc: "A clickable, investor-ready MVP in 5 working days — AI-assisted, production-quality."
+    },
+    demos_block: {
+      eyebrow: "LIVE DEMOS",
+      headline: "See what we've already built",
+      text: "Ready-made sites, landing pages, Telegram bots and Mini Apps across industries — open the catalog and order a similar project for your business.",
+      cta: "Open demo catalog →",
+      stat1: "10+", stat1l: "live demos",
+      stat2: "5 days", stat2l: "to an MVP"
     },
     showreel: {
       eyebrow: "CAPABILITY SHOWREEL",
@@ -199,9 +207,11 @@ const CONTENT = {
       f_consent: "I agree to the <a href=\"legal/terms.html\" target=\"_blank\">Terms of Service</a>, <a href=\"legal/privacy-policy.html\" target=\"_blank\">Privacy Policy</a>, <a href=\"legal/cookie-policy.html\" target=\"_blank\">Cookie Policy</a> and give <a href=\"legal/data-consent.html\" target=\"_blank\">consent to data processing</a>.",
       f_submit: "Send it →",
       f_validation: "Please fill in name and contact",
+      f_consent_required: "Please tick the consent box to continue.",
+      f_error: "Couldn't send your request. Please email us directly: info@sqorapro.com",
       f_sending: "Sending…",
-      success_title: "Application sent!",
-      success_sub: "We will reply within 2 hours."
+      success_title: "Request sent!",
+      success_sub: "Thank you — we'll get back to you within 2 hours."
     },
     footer: {
       kind: "Digital Product Studio · Almaty, Kazakhstan",
@@ -230,13 +240,21 @@ const CONTENT = {
     hero: {
       badge: "● DIGITAL PRODUCT STUDIO",
       sub: "Создаём цифровые продукты для стартапов и растущих компаний — от идеи до релиза.",
-      cta_primary: "Начать проект →",
+      cta_primary: "Обсудить проект →",
       cta_secondary: "Смотреть работы",
       trusted: "НАМ ДОВЕРЯЮТ",
       card1_desc: "Корпоративные сайты, SaaS-дашборды и веб-приложения — продуманный UX, масштабируемая архитектура.",
       card2_desc: "Нативные приложения для iOS и Android — полноценная мобильная разработка без компромиссов.",
       card3_desc: "Боты, Mini Apps и интеграции с CRM для команд, которые уже работают в Telegram.",
       card4_desc: "Кликабельный MVP за 5 рабочих дней — с помощью ИИ, готовый показать инвесторам."
+    },
+    demos_block: {
+      eyebrow: "ЖИВЫЕ ДЕМО",
+      headline: "Посмотрите, что мы уже построили",
+      text: "Готовые сайты, лендинги, Telegram-боты и Mini Apps по разным отраслям — откройте каталог и закажите похожий проект для своего бизнеса.",
+      cta: "Открыть каталог демо →",
+      stat1: "10+", stat1l: "живых демо",
+      stat2: "5 дней", stat2l: "до MVP"
     },
     showreel: {
       eyebrow: "НАШИ ВОЗМОЖНОСТИ",
@@ -415,9 +433,11 @@ const CONTENT = {
       f_consent: "Я соглашаюсь с <a href=\"legal/terms.html\" target=\"_blank\">Пользовательским соглашением</a>, <a href=\"legal/privacy-policy.html\" target=\"_blank\">Политикой конфиденциальности</a>, <a href=\"legal/cookie-policy.html\" target=\"_blank\">Политикой Cookie</a> и даю <a href=\"legal/data-consent.html\" target=\"_blank\">согласие на обработку данных</a>.",
       f_submit: "Отправить →",
       f_validation: "Пожалуйста, заполните имя и контакт",
+      f_consent_required: "Пожалуйста, отметьте согласие, чтобы продолжить.",
+      f_error: "Не удалось отправить заявку. Напишите нам напрямую: info@sqorapro.com",
       f_sending: "Отправляем…",
       success_title: "Заявка отправлена!",
-      success_sub: "Ответим в течение 2 часов."
+      success_sub: "Спасибо — мы ответим вам в течение 2 часов."
     },
     footer: {
       kind: "Digital Product Studio · Алматы, Казахстан 🇰🇿",
@@ -559,6 +579,17 @@ function initContactForm() {
       return;
     }
 
+    const consent = form.querySelector("[name='consent']")?.checked;
+    if (!consent) {
+      alert(t().f_consent_required);
+      const consentLabel = form.querySelector(".consent-label");
+      if (consentLabel) {
+        consentLabel.classList.add("consent-error");
+        setTimeout(() => consentLabel.classList.remove("consent-error"), 2200);
+      }
+      return;
+    }
+
     const originalLabel = submitBtn.innerHTML;
     submitBtn.textContent = t().f_sending;
     submitBtn.disabled = true;
@@ -573,7 +604,12 @@ function initContactForm() {
 
       form.innerHTML = `
         <div class="form-success">
-          <div class="form-success-icon">✅</div>
+          <div class="form-success-icon" aria-hidden="true">
+            <svg viewBox="0 0 52 52" width="100%" height="100%">
+              <circle class="fs-circle" cx="26" cy="26" r="24" fill="none"/>
+              <path class="fs-check" fill="none" d="M14 27 l8 8 l16 -18"/>
+            </svg>
+          </div>
           <div class="form-success-title">${t().success_title}</div>
           <div class="form-success-sub">${t().success_sub}</div>
         </div>`;
