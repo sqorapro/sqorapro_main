@@ -1,0 +1,17 @@
+{
+  "name": "SQORA PRO — Digital Product Studio",
+  "short_name": "SQORA PRO",
+  "description": "Студия цифровых продуктов в Алматы. Сайты, мобильные приложения, Telegram-боты и MVP.",
+  "lang": "ru",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a1628",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

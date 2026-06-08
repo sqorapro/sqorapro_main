@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Orphan template pages — not part of the live demo catalog
+Disallow: /demos/fitness.html
+Disallow: /demos/law-firm.html
+Disallow: /demos/real-estate.html
+Disallow: /demos/restaurant.html
+
+Sitemap: https://sqorapro.com/sitemap.xml

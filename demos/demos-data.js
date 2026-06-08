@@ -62,34 +62,6 @@ const DEMOS = [
     }
   },
   {
-    id: "mentor-excellence",
-    status: "live",
-    type: "telegram",
-    subtype: "bot-dashboard",
-    industry: "education",
-    budgetKey: "5k",
-    budget: "от 800 000 ₸",
-    timeline: "3–4 weeks",
-    stack: ["Node.js", "Grammy", "PostgreSQL", "React"],
-    emoji: "🎓",
-    liveUrl: "https://mentorbot.ru",
-    name: { en: "Mentor Excellence", ru: "Mentor Excellence" },
-    industry_label: { en: "Education · Bot + Dashboard", ru: "Образование · Бот + Дашборд" },
-    headline: { en: "Mentoring program management system", ru: "Система управления менторинговой программой" },
-    description: {
-      en: "Full system for managing 1,335 mentees and 153 mentors. Replaced WhatsApp chaos with Telegram bot + web dashboard. Built for EBRD grant project.",
-      ru: "Полная система для управления 1335 менти и 153 менторами. Заменила хаос в WhatsApp на Telegram-бота и веб-дашборд. Создана для проекта ЕБРР."
-    },
-    forWhom: {
-      en: ["Business schools & mentoring programs", "HR departments", "NGOs with EBRD/USAID grants", "Corporate training centers"],
-      ru: ["Бизнес-школы и менторинговые программы", "HR-отделы с менторингом", "НКО с грантами ЕБРР/USAID", "Корпоративные учебные центры"]
-    },
-    features: {
-      en: ["Web dashboard for admins", "Telegram bot for mentors", "1,335+ participant database", "Weekly auto-reports", "Pair management", "Ratings & activity tracking", "Excel import/export", "Role-based access"],
-      ru: ["Веб-дашборд для администраторов", "Telegram-бот для менторов", "База 1335+ участников", "Авто-отчёты каждую неделю", "Управление парами", "Рейтинги и активность", "Импорт/экспорт Excel", "Ролевой доступ"]
-    }
-  },
-  {
     id: "dental-clinic",
     status: "live",
     type: "web",
@@ -335,62 +307,6 @@ const DEMOS = [
         "Минималистичная форма записи — безрамочные поля, острая кнопка",
         "Полная мобильная адаптация, горизонтальный скролл мастеров"
       ]
-    }
-  },
-  {
-    id: "ecommerce-fashion",
-    status: "soon",
-    type: "web",
-    subtype: "ecommerce",
-    industry: "retail",
-    budgetKey: "5k",
-    budget: "от 700 000 ₸",
-    timeline: "3–4 weeks",
-    stack: ["React", "Vite", "Node.js", "Tailwind CSS"],
-    emoji: "👗",
-    liveUrl: "",
-    name: { en: "Fashion Store", ru: "Магазин одежды" },
-    industry_label: { en: "Retail · E-commerce", ru: "Торговля · Интернет-магазин" },
-    headline: { en: "Online fashion store with cart and checkout", ru: "Интернет-магазин одежды с корзиной и оплатой" },
-    description: {
-      en: "Full-featured online store with catalog, filtering, cart, wishlist and payment integration.",
-      ru: "Полноценный интернет-магазин с каталогом, фильтрами, корзиной и интеграцией оплаты."
-    },
-    forWhom: {
-      en: ["Clothing & accessories brands", "Boutiques", "Sportswear stores", "Kids clothing"],
-      ru: ["Бренды одежды и аксессуаров", "Бутики", "Спортивная одежда", "Детские магазины"]
-    },
-    features: {
-      en: ["Product catalog with filters", "Size guide", "Shopping cart", "Wishlist", "Payment integration", "Order tracking"],
-      ru: ["Каталог с фильтрами", "Таблица размеров", "Корзина", "Список желаний", "Интеграция оплаты", "Отслеживание заказа"]
-    }
-  },
-  {
-    id: "auto-service",
-    status: "soon",
-    type: "web",
-    subtype: "landing",
-    industry: "auto",
-    budgetKey: "1k",
-    budget: "от 200 000 ₸",
-    timeline: "1–2 weeks",
-    stack: ["React", "Vite", "Tailwind CSS"],
-    emoji: "🔧",
-    liveUrl: "",
-    name: { en: "Auto Service", ru: "Автосервис" },
-    industry_label: { en: "Auto · Landing", ru: "Авто · Лендинг" },
-    headline: { en: "Auto service landing with online booking", ru: "Лендинг автосервиса с онлайн-записью" },
-    description: {
-      en: "Clean auto service website with service list, pricing calculator and online appointment form.",
-      ru: "Чистый сайт автосервиса со списком услуг, калькулятором и формой онлайн-записи."
-    },
-    forWhom: {
-      en: ["Auto repair shops", "Car wash & detailing", "Tire service", "Car dealerships"],
-      ru: ["Автомастерские", "Автомойки и детейлинг", "Шиномонтаж", "Автосалоны"]
-    },
-    features: {
-      en: ["Services & pricing", "Cost calculator", "Online booking", "Work examples", "Certifications", "Map & contacts"],
-      ru: ["Услуги и цены", "Калькулятор стоимости", "Онлайн-запись", "Примеры работ", "Сертификаты", "Карта и контакты"]
     }
   },
   {
