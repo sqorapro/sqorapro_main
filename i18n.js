@@ -85,7 +85,7 @@ const CONTENT = {
       m2_label: "mentors connected",
       m3_label: "vs Western SaaS",
       m4_label: "to log activity",
-      quote: "Mentors fill out zero spreadsheets. Only the features they need — nothing extra. Everything via Telegram in 30 seconds.",
+      quote: "The team leader used to spend hours collecting data from 14 mentors. Now the system does it automatically.",
       demo: "View Live Demo →",
       dash_title: "Mentor Ops",
       dash_synced: "96% synced",
@@ -196,7 +196,7 @@ const CONTENT = {
       f_budget_opt8: "Let's discuss",
       f_msg: "Message",
       f_msg_ph: "Tell us the goal, timeline, and what already exists.",
-      f_consent: "I agree to the <a href=\"legal/terms.html\" target=\"_blank\">Terms of Service</a>, <a href=\"legal/privacy-policy.html\" target=\"_blank\">Privacy Policy</a>, <a href=\"legal/cookie-policy.html\" target=\"_blank\">Cookie Policy</a> and confirm consent to data processing.",
+      f_consent: "I agree to the <a href=\"legal/terms.html\" target=\"_blank\">Terms of Service</a>, <a href=\"legal/privacy-policy.html\" target=\"_blank\">Privacy Policy</a>, <a href=\"legal/cookie-policy.html\" target=\"_blank\">Cookie Policy</a> and give <a href=\"legal/data-consent.html\" target=\"_blank\">consent to data processing</a>.",
       f_submit: "Send it →",
       f_validation: "Please fill in name and contact",
       f_sending: "Sending…",
@@ -301,7 +301,7 @@ const CONTENT = {
       m2_label: "ментора подключено",
       m3_label: "дешевле западных аналогов",
       m4_label: "внести активность",
-      quote: "Менторы не заполняют никаких Excel-таблиц. Только нужный функционал — без лишнего. Всё через Telegram за 30 секунд.",
+      quote: "Раньше лидер команды тратил часы на сбор данных от 14 менторов. Теперь система делает это сама.",
       demo: "Открыть демо →",
       dash_title: "Система менторов",
       dash_synced: "96% синхронизировано",
@@ -386,9 +386,9 @@ const CONTENT = {
       eyebrow: "КОНТАКТЫ",
       headline1: "Есть идея?",
       headline2: "Давайте воплотим её.",
-      promise1: "⚡ Ответим в течение 2 часов",
-      promise2: "🎯 Бесплатная консультация 30 минут",
-      promise3: "📋 Коммерческое предложение за 24 часа",
+      promise1: "Ответим в течение 2 часов",
+      promise2: "Бесплатная консультация 30 минут",
+      promise3: "Коммерческое предложение за 24 часа",
       address: "Алматы, ул. Чайковского 131",
       telegram_btn: "Написать в Telegram →",
       f_name: "Имя",
@@ -412,7 +412,7 @@ const CONTENT = {
       f_budget_opt8: "Обсудим",
       f_msg: "Сообщение",
       f_msg_ph: "Расскажите о задаче, желаемых сроках и что уже сделано.",
-      f_consent: "Я соглашаюсь с <a href=\"/terms\" target=\"_blank\">Пользовательским соглашением</a>, <a href=\"/privacy\" target=\"_blank\">Политикой конфиденциальности</a>, <a href=\"/cookies\" target=\"_blank\">Политикой Cookie</a> и подтверждаю согласие на обработку данных.",
+      f_consent: "Я соглашаюсь с <a href=\"legal/terms.html\" target=\"_blank\">Пользовательским соглашением</a>, <a href=\"legal/privacy-policy.html\" target=\"_blank\">Политикой конфиденциальности</a>, <a href=\"legal/cookie-policy.html\" target=\"_blank\">Политикой Cookie</a> и даю <a href=\"legal/data-consent.html\" target=\"_blank\">согласие на обработку данных</a>.",
       f_submit: "Отправить →",
       f_validation: "Пожалуйста, заполните имя и контакт",
       f_sending: "Отправляем…",
@@ -494,6 +494,17 @@ function switchLang(lang) {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
 
+  // Promise row — has icon images, updated via innerHTML to preserve them
+  const promiseIcons = ["icons/lightning.png", "icons/rocket.png", "icons/document.png"];
+  const promiseKeys = ["contact.promise1", "contact.promise2", "contact.promise3"];
+  document.querySelectorAll(".promise-row span[data-i18n]").forEach((el, i) => {
+    const key = el.dataset.i18n;
+    const val = lookupKey(dict, key);
+    if (val !== undefined && promiseIcons[i]) {
+      el.innerHTML = `<img src="${promiseIcons[i]}" alt="" style="width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-right:6px"> ${val}`;
+    }
+  });
+
   // Legal note — HTML content with link, updated via innerHTML
   const legalNoteEl = document.getElementById("legalNote");
   if (legalNoteEl) {
@@ -505,9 +516,9 @@ function switchLang(lang) {
   const consentEl = document.getElementById("consentText");
   if (consentEl) {
     if (lang === "en") {
-      consentEl.innerHTML = 'I agree to the <a href="legal/terms.html" target="_blank">Terms of Service</a>, <a href="legal/privacy-policy.html" target="_blank">Privacy Policy</a>, <a href="legal/cookie-policy.html" target="_blank">Cookie Policy</a> and confirm consent to data processing.';
+      consentEl.innerHTML = 'I agree to the <a href="legal/terms.html" target="_blank">Terms of Service</a>, <a href="legal/privacy-policy.html" target="_blank">Privacy Policy</a>, <a href="legal/cookie-policy.html" target="_blank">Cookie Policy</a> and give <a href="legal/data-consent.html" target="_blank">consent to data processing</a>.';
     } else {
-      consentEl.innerHTML = 'Я соглашаюсь с <a href="legal/terms.html" target="_blank">Пользовательским соглашением</a>, <a href="legal/privacy-policy.html" target="_blank">Политикой конфиденциальности</a>, <a href="legal/cookie-policy.html" target="_blank">Политикой Cookie</a> и подтверждаю согласие на обработку данных.';
+      consentEl.innerHTML = 'Я соглашаюсь с <a href="legal/terms.html" target="_blank">Пользовательским соглашением</a>, <a href="legal/privacy-policy.html" target="_blank">Политикой конфиденциальности</a>, <a href="legal/cookie-policy.html" target="_blank">Политикой Cookie</a> и даю <a href="legal/data-consent.html" target="_blank">согласие на обработку данных</a>.';
     }
   }
 
