@@ -537,8 +537,7 @@ function initLang() {
 
 /* ─────────── Contact form: validation + Telegram send ─────────── */
 
-const BOT_TOKEN = ""; // fill before VPS deploy
-const ADMIN_CHAT_ID = ""; // fill before VPS deploy
+const CONTACT_API_URL = "https://sqorapro-brief.sqorapros.workers.dev/contact";
 
 function initContactForm() {
   const form = document.getElementById("contactForm");
@@ -564,40 +563,26 @@ function initContactForm() {
     submitBtn.textContent = t().f_sending;
     submitBtn.disabled = true;
 
-    const datetime = new Date().toLocaleString("ru-RU", { timeZone: "Asia/Almaty" });
+    try {
+      const res = await fetch(CONTACT_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, contact, type, budget, message })
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const text =
-      "🔔 *Новая заявка с сайта sqorapro.com*\n\n" +
-      `👤 *Имя:* ${name}\n` +
-      `📱 *Контакт:* ${contact}\n` +
-      `💼 *Тип:* ${type}\n` +
-      `💰 *Бюджет:* ${budget}\n` +
-      `📝 *Сообщение:* ${message || "—"}\n\n` +
-      `🕐 *Время:* ${datetime}\n` +
-      `📌 *Источник:* sqorapro.com`;
-
-    if (BOT_TOKEN && ADMIN_CHAT_ID) {
-      try {
-        await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: ADMIN_CHAT_ID, text, parse_mode: "Markdown" })
-        });
-      } catch (e) {
-        console.error("Telegram send failed:", e);
-      }
-    } else {
-      console.info("[contact form] dry-run payload:", text);
+      form.innerHTML = `
+        <div class="form-success">
+          <div class="form-success-icon">✅</div>
+          <div class="form-success-title">${t().success_title}</div>
+          <div class="form-success-sub">${t().success_sub}</div>
+        </div>`;
+    } catch (e) {
+      console.error("Contact send failed:", e);
+      alert(t().f_error || "Не удалось отправить заявку. Напишите нам напрямую: info@sqorapro.com");
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalLabel;
     }
-
-    form.innerHTML = `
-      <div class="form-success">
-        <div class="form-success-icon">✅</div>
-        <div class="form-success-title">${t().success_title}</div>
-        <div class="form-success-sub">${t().success_sub}</div>
-      </div>`;
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = originalLabel;
   });
 }
 

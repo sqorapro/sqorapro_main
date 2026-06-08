@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 86px;
+    }
+    /* brand glows */
+    .glow-1 {
+      position: absolute; top: -220px; right: -160px;
+      width: 620px; height: 620px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,120,255,.22), rgba(0,198,255,0) 70%);
+    }
+    .glow-2 {
+      position: absolute; bottom: -260px; left: -180px;
+      width: 560px; height: 560px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,198,255,.16), rgba(0,198,255,0) 70%);
+    }
+    .accent-bar {
+      position: absolute; top: 0; left: 0; width: 100%; height: 10px;
+      background: linear-gradient(90deg, #0078ff, #00c6ff);
+    }
+    .content { position: relative; z-index: 2; }
+    .logo { height: 96px; margin-bottom: 40px; }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 62px;
+      line-height: 1.08;
+      color: #0a1628;
+      letter-spacing: -1.5px;
+      max-width: 1000px;
+    }
+    h1 .hl {
+      background: linear-gradient(90deg, #0078ff, #00c6ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .sub {
+      margin-top: 26px;
+      font-size: 30px;
+      font-weight: 500;
+      color: #5c6a7d;
+      letter-spacing: -0.3px;
+    }
+    .footer-row {
+      position: absolute; left: 86px; right: 86px; bottom: 54px;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 2;
+    }
+    .domain {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: #0a1628;
+    }
+    .domain .dot { color: #0078ff; }
+    .badges { display: flex; gap: 14px; }
+    .badge {
+      font-size: 20px; font-weight: 600; color: #0a1628;
+      background: #eef4ff; border: 1px solid #d6e6ff;
+      padding: 10px 20px; border-radius: 999px;
+    }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="content">
+    <img class="logo" src="sqora-logo.png" alt="SQORA PRO">
+    <h1>Разработка сайтов, приложений<br>и <span class="hl">Telegram-ботов</span></h1>
+    <div class="sub">Студия цифровых продуктов в Алматы · MVP за 5 дней</div>
+  </div>
+
+  <div class="footer-row">
+    <div class="domain">sqorapro<span class="dot">.</span>com</div>
+    <div class="badges">
+      <div class="badge">Опыт с ЕБРР</div>
+      <div class="badge">ЮНЕСКО</div>
+    </div>
+  </div>
+</body>
+</html>
