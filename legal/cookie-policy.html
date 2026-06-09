@@ -40,6 +40,13 @@
     .mobile-menu a{padding:12px 10px;color:var(--navy);font-size:16px;font-weight:600;border-radius:8px}
     .mobile-menu a:hover{background:rgba(0,120,255,.08);color:var(--accent)}
     .site-nav.menu-open .mobile-menu{display:flex}
+    .nav-links{align-items:center}
+    .nav-links a.nav-demo,.mobile-menu a.nav-demo{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;color:var(--accent);background:rgba(0,120,255,.09);border:1px solid rgba(0,120,255,.22);font-weight:700}
+    .nav-links a.nav-demo::before,.mobile-menu a.nav-demo::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:0 0 auto}
+    .nav-links a.nav-demo:hover,.mobile-menu a.nav-demo:hover{color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent}
+    .mobile-menu a.nav-demo{justify-content:center;padding:12px 14px;margin:4px 0}
+    .mobile-menu .nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;font-weight:800;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));margin-top:6px}
+    .footer-cta{display:inline-flex;align-items:center;gap:8px;margin-top:14px;min-height:44px;padding:0 22px;border-radius:999px;font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 12px 30px rgba(0,120,255,.28)}
 
     /* ───── Doc header band ───── */
     .doc-hero{position:relative;padding:148px 0 56px;color:#fff;background:radial-gradient(circle at 80% 20%,rgba(0,198,255,.18),transparent 32%),linear-gradient(180deg,#050d1a 0%,#0a1628 100%);overflow:hidden}
@@ -123,7 +130,7 @@
     <div class="nav-links">
       <a href="../index.html#services">Услуги</a>
       <a href="../index.html#work">Работы</a>
-      <a href="../demos.html">Демо</a>
+      <a class="nav-demo" href="../demos.html">Демо</a>
       <a href="../index.html#process">Процесс</a>
       <a href="../index.html#about">О нас</a>
       <a href="../index.html#contact">Контакты</a>
@@ -137,11 +144,11 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="../index.html#services">Услуги</a>
       <a href="../index.html#work">Работы</a>
-      <a href="../demos.html">Демо</a>
+      <a class="nav-demo" href="../demos.html">Демо</a>
       <a href="../index.html#process">Процесс</a>
       <a href="../index.html#about">О нас</a>
       <a href="../index.html#contact">Контакты</a>
-      <a href="index.html#contact">Обсудить проект →</a>
+      <a class="nav-cta" href="../index.html#contact">Обсудить проект →</a>
     </div>
   </nav>
 
@@ -296,6 +303,7 @@
         <a href="mailto:info@sqorapro.com">info@sqorapro.com</a>
         <a href="tel:+77772894949">+7 777 289 49 49</a>
         <span>Алматы, ул. Чайковского 131</span>
+        <a class="footer-cta" href="../index.html#contact">Обсудить проект <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div class="container legal-row">

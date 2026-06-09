@@ -566,27 +566,56 @@ function initContactForm() {
   if (!submitBtn) return;
 
   const t = () => CONTENT[currentLang].contact;
+  const errorBox = form.querySelector("#formError");
+
+  const clearFieldErrors = () => {
+    if (errorBox) errorBox.hidden = true;
+    form.querySelectorAll(".is-invalid").forEach((el) => el.classList.remove("is-invalid"));
+    const cl = form.querySelector(".consent-label");
+    if (cl) cl.classList.remove("consent-error");
+  };
+
+  const showError = (msg, fields = []) => {
+    if (errorBox) {
+      errorBox.textContent = msg;
+      errorBox.hidden = false;
+      // restart shake animation
+      errorBox.style.animation = "none";
+      void errorBox.offsetWidth;
+      errorBox.style.animation = "";
+    }
+    fields.forEach((el) => el && el.classList.add("is-invalid"));
+    (fields[0] || errorBox)?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  // Clear errors as the user corrects the form
+  form.querySelectorAll("input, textarea").forEach((el) => {
+    el.addEventListener("input", clearFieldErrors);
+    el.addEventListener("change", clearFieldErrors);
+  });
 
   submitBtn.addEventListener("click", async () => {
-    const name = form.querySelector("[name='name']")?.value?.trim();
-    const contact = form.querySelector("[name='contact']")?.value?.trim();
+    const nameEl = form.querySelector("[name='name']");
+    const contactEl = form.querySelector("[name='contact']");
+    const consentEl = form.querySelector("[name='consent']");
+    const name = nameEl?.value?.trim();
+    const contact = contactEl?.value?.trim();
     const type = form.querySelector("[name='project-type']")?.value;
     const budget = form.querySelector("[name='budget']")?.value;
     const message = form.querySelector("[name='message']")?.value?.trim();
 
+    clearFieldErrors();
+
     if (!name || !contact) {
-      alert(t().f_validation);
+      showError(t().f_validation, [!name && nameEl, !contact && contactEl].filter(Boolean));
       return;
     }
 
-    const consent = form.querySelector("[name='consent']")?.checked;
+    const consent = consentEl?.checked;
     if (!consent) {
-      alert(t().f_consent_required);
       const consentLabel = form.querySelector(".consent-label");
-      if (consentLabel) {
-        consentLabel.classList.add("consent-error");
-        setTimeout(() => consentLabel.classList.remove("consent-error"), 2200);
-      }
+      if (consentLabel) consentLabel.classList.add("consent-error");
+      showError(t().f_consent_required);
       return;
     }
 
@@ -615,7 +644,7 @@ function initContactForm() {
         </div>`;
     } catch (e) {
       console.error("Contact send failed:", e);
-      alert(t().f_error || "Не удалось отправить заявку. Напишите нам напрямую: info@sqorapro.com");
+      showError(t().f_error || "Не удалось отправить заявку. Напишите нам напрямую: info@sqorapro.com");
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalLabel;
     }
