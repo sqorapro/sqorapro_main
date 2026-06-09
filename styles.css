@@ -96,7 +96,7 @@ button {
   display: inline-flex;
   align-items: center;
   color: var(--navy);
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: 21px;
   font-weight: 800;
   line-height: 1;
@@ -333,7 +333,7 @@ button {
 
 .hero-title {
   margin: 14px 0 18px;
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: 96px;
   font-weight: 800;
   line-height: 0.95;
@@ -638,7 +638,7 @@ section[id] {
 .contact-copy h2 {
   margin: 12px 0 0;
   color: var(--ink);
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: 56px;
   font-weight: 800;
   line-height: 1.02;
@@ -831,7 +831,7 @@ section[id] {
   position: relative;
   z-index: 1;
   color: var(--accent);
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: 42px;
   line-height: 1;
 }
@@ -909,7 +909,7 @@ section[id] {
 .proof-counters strong {
   display: block;
   color: var(--accent);
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: 56px;
   line-height: 1;
 }
@@ -1629,7 +1629,7 @@ blockquote {
 .stats-grid strong {
   display: block;
   color: var(--accent-2);
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: 64px;
   line-height: 1;
 }
@@ -2079,7 +2079,7 @@ blockquote {
   color: rgba(214, 64, 84, 0.85);
   font-weight: 900;
   font-size: 26px;
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   transform: rotate(-12deg);
   box-shadow: inset 0 0 0 1px rgba(214, 64, 84, 0.25);
   animation: stampPulse 3.2s ease-in-out infinite;
@@ -2990,7 +2990,7 @@ a.md-note:hover {
   position: absolute;
   top: 18px;
   right: 22px;
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: 38px;
   font-weight: 800;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -3370,7 +3370,7 @@ a.md-note:hover {
 @keyframes fsCheck  { to { stroke-dashoffset: 0; } }
 
 .form-success-title {
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-weight: 800;
   font-size: 28px;
   line-height: 1.15;
@@ -3456,7 +3456,7 @@ a.md-note:hover {
   margin-bottom: 14px;
 }
 .demos-teaser h2 {
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: clamp(26px, 3.4vw, 40px);
   line-height: 1.1;
   letter-spacing: -0.8px;
@@ -3475,7 +3475,7 @@ a.md-note:hover {
 }
 .demos-teaser .dt-stats div { display: flex; flex-direction: column; }
 .demos-teaser .dt-stats b {
-  font-family: "Syne", "Inter", sans-serif;
+  font-family: "Consolas", "Inter", sans-serif;
   font-size: 30px;
   color: #fff;
 }
